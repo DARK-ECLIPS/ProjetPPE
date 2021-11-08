@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "OriginTech";
+  src: url(../font/OriginTech.ttf) format("truetype");
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'OriginTech', sans-serif;
+}
+body{
+  overflow: hidden;
+}
+section
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #59dcf3,#8dd3df);
+}
+section .color
+{
+  position: absolute;
+  filter:blur(150px);
+}
+section .color:nth-child(1)
+{
+  top: -350px;
+  width: 600px;
+  height: 600px;
+  background: #2ddff3;
+}
+section .color:nth-child(2)
+{
+  bottom: 200px;
+  left: 100;
+  width: 500px;
+  height: 500px;
+  background: #ffffff;
+}
+section .color:nth-child(3)
+{
+  bottom: 50px;
+  left: 100;
+  width: 300px;
+  height: 300px;
+  background: #00D2FF;
+}
+section .color:nth-child(4)
+{
+  left: 0;
+  width: 900px;
+  height: 900px;
+  background: #03BCF4;
+}
+section .color:nth-child(5)
+{
+  right: 0;
+  width: 800px;
+  height: 800px;
+  background: #00cafc;
+}
+#container {
+  position: relative;
+  width: 400px;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.form
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.form h1
+{
+  position: relative;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+.form h1::before
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 35%;
+  height: 4px;
+  background: #FFF;
+}
+.form .inputBox
+{
+  width: 100%;
+  margin-top: 20px;
+}
+.form .inputBox input[type='text'], .form .inputBox input[type='password']
+{
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #FFF;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form .inputBox [type=text]:hover, .form .inputBox [type=password]:hover
+{
+  background-color: white;
+  color: #000000;
+  border: 1px solid #598FF3;
+}
+
+input[type=submit]
+{
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #666;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 150px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+input[type=submit]:hover
+{
+  color: #666;
+  border: 1px solid #598FF3;
+}
+.forget
+{
+  margin-top: 5px;
+  color: #FFF;
+}
+.forget a
+{
+  color: #598FF3;
+  font-weight: 600;
+}
