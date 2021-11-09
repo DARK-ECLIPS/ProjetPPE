@@ -14,7 +14,7 @@
             <div id="container">
                 <!-- zone de connexion -->
                 <div class="form">
-                    <form action="verification.php" method="POST">
+                    <form action="../gestionnaire/login.php" method="POST">
                         <h1>Connexion</h1>
                         <div class="inputBox">
                             <input type="text" placeholder="Identifiant" name="userID" required>
