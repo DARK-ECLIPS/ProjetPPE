@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="fr">
 <html>
     <head>
        <meta charset="utf-8">
@@ -14,25 +16,19 @@
             <div id="container">
                 <!-- zone de connexion -->
                 <div class="form">
-                    <form action="../gestionnaire/login.php" method="POST">
-                        <h1>Connexion</h1>
+                    <h1>Connexion</h1>
+                    <form method="post" action="../model/controllers/requetes.php?OperaPPE=login">
+                        <input type="hidden" name="OperaPPE" value="login">
                         <div class="inputBox">
-                            <input type="text" placeholder="Identifiant" name="userID" required>
+                            <input type="text" placeholder="Identifiant" name="pseudo" required>
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Mot de passe" name="password" required>
+                            <input type="password" placeholder="Mot de passe" name="mdp" required>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" id='submit' value='Connexion'>
+                            <input type="submit" value='Connexion'>
                         </div>
                         <p class="forget">Mot de passe oublié ? <a href="#">Cliquez ici</a></p>
-                        <?php
-                        if(isset($_GET['erreur'])){
-                            $err = $_GET['erreur'];
-                            if($err==1 || $err==2)
-                                echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                        }
-                        ?>
                     </form>
                 </div>
             </div>

@@ -29,8 +29,8 @@ section .color
 section .color:nth-child(1)
 {
   top: -350px;
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
   background: #2ddff3;
 }
 section .color:nth-child(2)
@@ -45,8 +45,8 @@ section .color:nth-child(3)
 {
   bottom: 50px;
   left: 100;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   background: #00D2FF;
 }
 section .color:nth-child(4)
@@ -59,8 +59,8 @@ section .color:nth-child(4)
 section .color:nth-child(5)
 {
   right: 0;
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
   background: #00cafc;
 }
 #container {
