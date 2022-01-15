@@ -16,11 +16,11 @@
 		s'appele 'OperaPPE'
 	*/
   if (isset($_GET['OperaPPE'])) {
-    if ($_GET['OperaPPE'] == 'login') {
+    if ($_GET['OperaPPE'] == '4441524b2045434e454c4953') {
       if ($_POST['OperaPPE'] == 'login') {
 
         // Création d'un objet "Users"
-        $user = new Users($_POST['pseudo'], "", "", $_POST['mdp'], "", "", "");
+        $user = new Users("", $_POST['pseudo'], "", "", "", "", $_POST['mdp'], "", "");
 
         if ($base_donnees -> existe($user)) {
           echo "Connexion en cours....";
@@ -29,10 +29,9 @@
 
           // Récupération des donnés de l'user
           $userInfo = $base_donnees->getUser($_POST['pseudo'])->fetch();
-          $userAvatar = $base_donnees->getAvatar($userInfo['id'])->fetch(PDO::FETCH_ASSOC);
 
           // Creation d'une session
-          $base_donnees->newSession($userInfo, $userAvatar);
+          $base_donnees->newSession($userInfo);
           
         } else {
           echo "Information de connexion erronée (Identifiant / Mot de passe)";
@@ -40,6 +39,50 @@
           echo '<meta http-equiv="refresh" content="2;URL=../../view/login.php">';
         }
       }
+
+      else if ($_POST['OperaPPE'] == 'password') {
+        session_start();
+        
+        $userInfo = $base_donnees->getUser($_SESSION['userInfo']['pseudo'])->fetch();
+        
+				if ($userInfo['password'] == $_POST['currentPassword']) {
+					if ($_POST['newPassword'] == $_POST['confirmPassword']) {
+            if ($_POST['newPassword'] !== $_POST['currentPassword']) {
+              
+              $conn_db->getDB()->query("UPDATE utilisateur SET password = '".$_POST['newPassword']."' WHERE id_utilisateur = '".$_SESSION['userInfo']['id']."'");
+
+              ?>
+              <script>
+                alert("Mot de passe mis à jour avec succès");
+                window.location = "http://localhost/ProjetPPE/view/userProfile/profile.php";
+              </script>
+            <?php
+            } else {
+              ?>
+                <script>
+                  alert("Le nouveau mot de passe ne doit pas être le même que l'ancien");
+                  window.location = "http://localhost/ProjetPPE/view/userProfile/password.php";
+                </script>
+              <?php
+            }
+          } else {
+            ?>
+              <script>
+                alert("La confirmation du passe n'est identique au nouveau mot de passe");
+                window.location = "http://localhost/ProjetPPE/view/userProfile/password.php";
+              </script>
+            <?php
+          }
+        } else {
+          ?>
+            <script>
+              alert("Mot de Passe Incorrect");
+              window.location = "http://localhost/ProjetPPE/view/userProfile/password.php";
+            </script>
+          <?php
+        }
+      }
+
     } else if ($_GET['OperaPPE'] == 'logout') {
 
       // Initialisation de la session.

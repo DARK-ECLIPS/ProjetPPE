@@ -2,13 +2,13 @@
   <div class="navigation">
     <ul>
       <li>
-        <a href="menu.php">
+        <a href="http://localhost/ProjetPPE/view/menu">
           <span class="icon"><i class="fas fa-graduation-cap"></i></span>
           <span class="title"><h2>Perseverants</h2></span>
         </a>
       </li>
       <li>
-        <a href="menu.php">
+        <a href="http://localhost/ProjetPPE/view/menu">
           <span class="icon"><i class="fas fa-home"></i></span>
           <span class="title">Tableau de bord</span>
         </a>
@@ -26,7 +26,7 @@
         </a>
       </li>
       <li>
-        <a href="profile.php">
+        <a href="http://localhost/ProjetPPE/view/userProfile/profile">
           <span class="icon"><i class="fas fa-cog"></i></span>
           <span class="title">Réglages</span>
         </a>
@@ -38,7 +38,7 @@
         </a>
       </li>
       <li>
-        <a href="../model/controllers/requetes.php?OperaPPE=logout">
+        <a href="http://localhost/ProjetPPE/model/controllers/requetes?OperaPPE=logout">
           <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
           <span class="title">Deconnexion</span>
         </a>

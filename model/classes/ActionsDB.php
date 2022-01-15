@@ -5,7 +5,7 @@
 	  Ajouts, Suppression, MAJ, et Récupération d'informations
 	*/
 	
-  // require(__DIR__ . '/ConnexionDB.php');
+  // require(__DIR__ . '/ConnexionDB');
 
 	class ActionsDB
 	{
@@ -28,53 +28,75 @@
 
 		public function getAllUsers()
 		{
-			$requete = "select * from users";
+			$requete = "select * from utilisateur";
 
 			return $this->conn_db->getDB()->query($requete);
 		}
 
     public function getUser($user)
     {
-      $requete = "SELECT * FROM users WHERE pseudo = '$user'";
+      $requete = "SELECT * FROM utilisateur WHERE pseudo = '$user'";
 			
 			return $this->conn_db->getDB()->query($requete);
     }
 
-		public function getAvatar($id)
-		{
-			$requete = "SELECT * FROM images WHERE id = '$id'";
+    public function getMatter($id)
+    {
+			$requete = "SELECT count(*) as quantite FROM professeur WHERE id_utilisateur = '$id'";
+			$reponse = $this->conn_db->getDB()->prepare($requete);
 
-			return $this->conn_db->getDB()->query($requete);
-		}
+			$reponse->bindValue('id_utilisateur', $id, PDO::PARAM_STR);
+			$reponse->execute();
 
-		public function newSession($userInfo, $avatarInfo)
+			$donnees = $reponse->fetch(PDO::FETCH_OBJ);
+
+			$result = ($donnees->quantite != 0) ? true : false;
+
+			if (!$result) {
+				$requete2 = "SELECT count(*) as quantite FROM receptionniste WHERE id_utilisateur = '$id'";
+				$reponse2 = $this->conn_db->getDB()->prepare($requete2);
+				$reponse2->bindValue('id_utilisateur', $id, PDO::PARAM_STR);
+				$reponse2->execute();
+				$donnees2 = $reponse2->fetch(PDO::FETCH_OBJ);
+				$result2 = ($donnees2->quantite != 0) ? true : false;
+
+				if (!$result2) return "Admin";
+				else return "Receptionniste";
+			}
+			else return "Professeur";
+    }
+
+		public function newSession($userInfo)
 		{
 			// Creation d'une session
 			session_start();
 
 			// Définition des valeur de la session
-			$_SESSION["userInfo"] = array('id' => $userInfo['id'],
+			$_SESSION["userInfo"] = array('id' => $userInfo['id_utilisateur'],
 																		'pseudo' => $userInfo['pseudo'],
 																		'nom' => $userInfo['nom'],
 																		'prenom' => $userInfo['prenom'],
-																		'email' => $userInfo['email'],
+																		'tel' => $userInfo['tel_cel'],
+																		'email' => $userInfo['mail_utilisateur'],
+																		'sexe' => $userInfo['sexe'],
 																		'avatar' => $userInfo['avatar'],
-																		'sexe' => $userInfo['sexe']
-																	);
-
-			$_SESSION["avatarInfo"] = array('id' => $avatarInfo['id'],
-																			'image' => $avatarInfo['image'],
-																			'created' => $avatarInfo['created']
+																		'matter' => $this->getMatter($userInfo['id_utilisateur'])
 																	);
 		}
 
 		public function updateSession()
 		{
-			$avatarInfo = $this->getAvatar($_SESSION['userInfo']['id'])->fetch(PDO::FETCH_ASSOC);
+			$userInfo = $this->getUser($_SESSION['userInfo']['pseudo'])->fetch(PDO::FETCH_ASSOC);
 
-			$_SESSION["avatarInfo"] = array('id' => $avatarInfo['id'],
-																			'image' => $avatarInfo['image'],
-																			'created' => $avatarInfo['created']
+			$_SESSION["userInfo"] = array('id' => $userInfo['id_utilisateur'],
+																		'pseudo' => $userInfo['pseudo'],
+																		'nom' => $userInfo['nom'],
+																		'prenom' => $userInfo['prenom'],
+																		'tel' => $userInfo['tel_cel'],
+																		'email' => $userInfo['mail_utilisateur'],
+																		'sexe' => $userInfo['sexe'],
+																		'avatar' => $userInfo['avatar'],
+																		'matter' => $this->getMatter($userInfo['id_utilisateur'])
 																	);
 		}
 		
@@ -84,7 +106,7 @@
 		// 	$requete = "insert into users values (:pseudo,
 		// 										  :nom,
 		// 										  :prenom,
-		// 										  :mdp)";
+		// 										  :password)";
 
 		// 	$reponse = $this->conn_db->getDB()->prepare($requete);
 
@@ -95,7 +117,7 @@
 		// 	$reponse->execute(array('pseudo' => $user->getPseudo(),
 		// 							'nom' => $user->getNom(),
 		// 							'prenom' => $user->getPrenom(),
-		// 							'mdp' => $user->getMdp()));
+		// 							'password' => $user->getpassword()));
 		// }
 
 		// public function delete($user)
@@ -110,10 +132,10 @@
 
 		public function update($pseudo, $user)
 		{
-			$requete = "update users
+			$requete = "update utilisateur
 						set nom = :nom,
 							prenom = :prenom,
-							mdp = :mdp
+							password = :password
 						where pseudo = :pseudo";
 
 			$reponse = $this->conn_db->getDB()->prepare($requete);
@@ -138,7 +160,7 @@
 			*/
 			$reponse->bindValue('nom', $user->getNom(), PDO::PARAM_STR);
 			$reponse->bindValue('prenom', $user->getPrenom(), PDO::PARAM_STR);
-			$reponse->bindValue('mdp', $user->getMdp(), PDO::PARAM_STR);
+			$reponse->bindValue('password', $user->getPassword(), PDO::PARAM_STR);
 			$reponse->bindValue('pseudo', $pseudo, PDO::PARAM_STR);
 
 			$reponse->execute();
@@ -147,14 +169,14 @@
 		public function existe($user)
 		{
 			$requete = "select count(*) as quantite 
-									from users 
+									from utilisateur 
 									where pseudo = :pseudo
-									and mdp = :mdp";
+									and password = :password";
 
 			$reponse = $this->conn_db->getDB()->prepare($requete);
 
 			$reponse->bindValue('pseudo', $user->getPseudo(), PDO::PARAM_STR);
-			$reponse->bindValue('mdp', $user->getMdp(), PDO::PARAM_STR);
+			$reponse->bindValue('password', $user->getPassword(), PDO::PARAM_STR);
 
 			$reponse->execute();
 

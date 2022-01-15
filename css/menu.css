@@ -84,7 +84,7 @@ overflow-x: hidden;
   height: 60px;
   line-height: 60px;
   white-space: nowrap;
-}
+} 
 .main
 {
   position: absolute;
@@ -191,6 +191,7 @@ overflow-x: hidden;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  border-radius: 20px;
 }
 .cardBox .card .number
 {
@@ -223,6 +224,7 @@ overflow-x: hidden;
   min-height: 530px;
   background: #FFF;
   padding: 20px;
+  border-radius: 20px;
 }
 .cardHeader
 {
@@ -319,6 +321,7 @@ overflow-x: hidden;
   min-height: 530px;
   background: #FFF;
   padding: 20px;
+  border-radius: 20px;
 }
 .details .recentCustomers .imgBx
 {

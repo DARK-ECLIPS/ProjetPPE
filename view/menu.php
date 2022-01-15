@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-session_start()
+session_start();
+include_once('../model/controllers/CheckUp.php');
 ?>
 <!-- echo ($_SESSION['userInfo']['nom']) -->
 <html>

@@ -1,8 +1,8 @@
 <?php
 // Include the database configuration file
 
-require '../model/classes/ConnexionDB.php';
-require '../model/classes/ActionsDB.php';
+require '../../model/classes/ConnexionDB.php';
+require '../../model/classes/ActionsDB.php';
 
 $conn_db = new ConnexionDB();
 
@@ -19,17 +19,16 @@ if(isset($_POST["submit"])){
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
          
         // Allow certain file formats 
-        $allowTypes = array('jpg','png','jpeg','gif');
-        if(in_array($fileType, $allowTypes)){ 
+        $allowTypes = array('jpg','png','jpeg','jfif','tiff','webp','ico');
+        if(in_array($fileType, $allowTypes)){
             $image = $_FILES['image']['tmp_name']; 
             $imgContent = addslashes(file_get_contents($image));
-            $id = $_SESSION['avatarInfo']['id'];
          
             // Insert image content into database
-            $insert = $conn_db->getDB()->query("UPDATE images SET image = '$imgContent', updated = NOW() WHERE id = '$id'");
+            $insert = $conn_db->getDB()->query("UPDATE utilisateur SET avatar = '$imgContent' WHERE id_utilisateur = '".$_SESSION['userInfo']['id']."'");
             $base_donnees->updateSession();
              
-            if($insert){ 
+            if($insert){
                 $status = 'success'; 
                 $statusMsg = "File uploaded successfully."; 
             }else{ 

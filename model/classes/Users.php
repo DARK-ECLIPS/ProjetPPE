@@ -5,30 +5,40 @@
 	*/
 	class Users
 	{
-
+		private $id;
 		private $pseudo;
 		private $nom;
 		private $prenom;
-		private $mdp;
-		private $email;
-		private $avatar;
+		private $tel_cel;
+		private $mail_utilisateur;
+		private $password;
 		private $sexe;
+		private $avatar;
 		
-		function __construct($pseudo, 
+		function __construct($id,
+							 $pseudo, 
 							 $nom, 
 							 $prenom,
-							 $mdp,
-							 $email,
-							 $avatar,
-							 $sexe)
+							 $tel_cel,
+							 $mail_utilisateur,
+							 $password,
+							 $sexe,
+							 $avatar)
 		{
+			$this->id = $id; 
 			$this->pseudo = $pseudo; 
 		 	$this->nom = $nom; 
 		 	$this->prenom = $prenom;
-		 	$this->mdp = $mdp;
-		 	$this->email = $email;
-		 	$this->avatar = $avatar;
+		 	$this->tel_cel = $tel_cel;
+		 	$this->mail_utilisateur = $mail_utilisateur;
+		 	$this->password = $password;
 		 	$this->sexe = $sexe;
+		 	$this->avatar = $avatar;
+		}
+
+		public function setId($id)
+		{
+			$this->id = $id;
 		}
 
 		public function setPseudo($pseudo)
@@ -46,19 +56,19 @@
 			$this->prenom = $prenom;
 		}
 
-		public function setMdp($mdp)
+		public function setTel_cel($tel_cel)
 		{
-			$this->mdp = $mdp;
+			$this->tel_cel = $tel_cel;
 		}
 
-		public function setEmail($email)
+		public function setMail_utilisateur($mail_utilisateur)
 		{
-			$this->email = $email;
+			$this->mail_utilisateur = $mail_utilisateur;
 		}
 
-		public function setAvatar($avatar)
+		public function setPassword($password)
 		{
-			$this->avatar = $avatar;
+			$this->password = $password;
 		}
 
 		public function setSexe($sexe)
@@ -66,6 +76,16 @@
 			$this->sexe = $sexe;
 		}
 
+		public function setAvatar($avatar)
+		{
+			$this->avatar = $avatar;
+		}
+		
+		public function getId()
+		{
+			return $this->id;
+		}
+		
 		public function getPseudo()
 		{
 			return $this->pseudo;
@@ -81,24 +101,29 @@
 			return $this->prenom;
 		}
 
-		public function getMdp()
+		public function getTel_cel()
 		{
-			return $this->mdp;
+			return $this->tel_cel;
 		}
 
-		public function getEmail($email)
+		public function getMail_utilisateur($mail_utilisateur)
 		{
-			return $this->email;
+			return $this->mail_utilisateur;
 		}
 
-		public function getAvatar($avatar)
+		public function getPassword()
 		{
-			return $this->avatar;
+			return $this->password;
 		}
 
 		public function getSexe($sexe)
 		{
 			return $this->sexe;
+		}
+
+		public function getAvatar($avatar)
+		{
+			return $this->avatar;
 		}
 	}
 ?>

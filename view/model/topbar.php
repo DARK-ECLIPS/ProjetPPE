@@ -7,8 +7,8 @@
     </label>
   </div>
   <div class="user">
-    <a href="profile.php">
-      <img src="data:image/jpg;charset=ut8;base64,<?php echo base64_encode($_SESSION['avatarInfo']['image']); ?>" />
+    <a href="http://localhost/ProjetPPE/view/userProfile/profile.php">
+      <img src="data:image/jpg;charset=ut8;base64,<?php echo base64_encode($_SESSION['userInfo']['avatar']); ?>" />
     </a>
   </div>
 </div>
