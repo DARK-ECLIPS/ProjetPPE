@@ -25,7 +25,7 @@ include_once('../../model/controllers/CheckUp.php');
           <div class="cardHeader">
             <div class="user">
               <a">
-                <img src="data:image/jpg;charset=ut8;base64,<?php echo base64_encode($_SESSION['userInfo']['avatar']); ?>" />
+                <img src="<?php echo $_SESSION['userInfo']['avatar']; ?>" />
               </a>
               <a href="avatar">
                 <span class="icon"><i class="fas fa-pencil-alt"></i></span>

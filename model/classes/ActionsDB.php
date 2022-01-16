@@ -66,6 +66,13 @@
 			else return "Professeur";
     }
 
+		public function getAvatar($sexe)
+		{
+			if ($sexe == 'Femme') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
+			else if ($sexe == 'Homme') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
+			else return 'http://localhost/ProjetPPE/model/assets/images/menwo.png';
+		}
+
 		public function newSession($userInfo)
 		{
 			// Creation d'une session
@@ -79,7 +86,7 @@
 																		'tel' => $userInfo['tel_cel'],
 																		'email' => $userInfo['mail_utilisateur'],
 																		'sexe' => $userInfo['sexe'],
-																		'avatar' => $userInfo['avatar'],
+																		'avatar' => $this->getAvatar($userInfo['sexe']),
 																		'matter' => $this->getMatter($userInfo['id_utilisateur'])
 																	);
 		}
@@ -95,7 +102,7 @@
 																		'tel' => $userInfo['tel_cel'],
 																		'email' => $userInfo['mail_utilisateur'],
 																		'sexe' => $userInfo['sexe'],
-																		'avatar' => $userInfo['avatar'],
+																		'avatar' => $this->getAvatar($userInfo['sexe']),
 																		'matter' => $this->getMatter($userInfo['id_utilisateur'])
 																	);
 		}

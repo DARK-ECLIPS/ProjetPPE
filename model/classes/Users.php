@@ -13,7 +13,7 @@
 		private $mail_utilisateur;
 		private $password;
 		private $sexe;
-		private $avatar;
+		// private $avatar;
 		
 		function __construct($id,
 							 $pseudo, 
@@ -22,8 +22,9 @@
 							 $tel_cel,
 							 $mail_utilisateur,
 							 $password,
-							 $sexe,
-							 $avatar)
+							 $sexe
+							//  $avatar
+							 )
 		{
 			$this->id = $id; 
 			$this->pseudo = $pseudo; 
@@ -33,7 +34,7 @@
 		 	$this->mail_utilisateur = $mail_utilisateur;
 		 	$this->password = $password;
 		 	$this->sexe = $sexe;
-		 	$this->avatar = $avatar;
+		 	// $this->avatar = $avatar;
 		}
 
 		public function setId($id)
@@ -76,10 +77,10 @@
 			$this->sexe = $sexe;
 		}
 
-		public function setAvatar($avatar)
-		{
-			$this->avatar = $avatar;
-		}
+		// public function setAvatar($avatar)
+		// {
+		// 	$this->avatar = $avatar;
+		// }
 		
 		public function getId()
 		{
@@ -121,9 +122,9 @@
 			return $this->sexe;
 		}
 
-		public function getAvatar($avatar)
-		{
-			return $this->avatar;
-		}
+		// public function getAvatar($avatar)
+		// {
+		// 	return $this->avatar;
+		// }
 	}
 ?>

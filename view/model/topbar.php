@@ -8,7 +8,7 @@
   </div>
   <div class="user">
     <a href="http://localhost/ProjetPPE/view/userProfile/profile.php">
-      <img src="data:image/jpg;charset=ut8;base64,<?php echo base64_encode($_SESSION['userInfo']['avatar']); ?>" />
+      <img src="<?php echo $_SESSION['userInfo']['avatar']; ?>" />
     </a>
   </div>
 </div>
