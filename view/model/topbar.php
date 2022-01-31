@@ -1,3 +1,5 @@
+<body onload="adminMenu()"></body>
+
 <div class="topbar">
   <div class="toggle" onclick="toggleMenu()"></div>
   <div class="search">

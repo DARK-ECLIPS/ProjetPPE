@@ -1,5 +1,7 @@
+<script src="http://localhost/ProjetPPE/js/toggleMenu.js"></script>
+
 <div class="container">
-  <div class="navigation">
+  <div class="navigation" onload="adminMenu()">
     <ul>
       <li>
         <a href="http://localhost/ProjetPPE/view/menu">
@@ -13,6 +15,7 @@
           <span class="title">Tableau de bord</span>
         </a>
       </li>
+      <li class="slot"></li>
       <li>
         <a href="#">
           <span class="icon"><i class="fas fa-book"></i></span>
