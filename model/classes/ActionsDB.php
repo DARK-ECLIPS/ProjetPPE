@@ -70,7 +70,7 @@
 		{
 			if ($sexe == 'Femme') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
 			else if ($sexe == 'Homme') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
-			else return 'http://localhost/ProjetPPE/model/assets/images/menwo.png';
+			else return 'http://localhost/ProjetPPE/model/assets/images/manwo.png';
 		}
 
 		public function newSession($userInfo)
