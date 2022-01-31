@@ -41,7 +41,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
             <div class="inputBox">
               <div class="bottom">
-                <a href="./profile"><input type="button" value='Annulé' href='./profile.php'></a>
+                <a href="./profile"><input type="button" value='Annulé'></a>
                 <input type="submit" name="submit" value='Validé'>
               </div>
             </div>
@@ -49,16 +49,6 @@ include_once('../../model/controllers/CheckUp.php');
         </div>
       </div>
     </div>
-
-    <script>
-      function toggleMenu() {
-        let toggle = document.querySelector('.toggle');
-        let navigation = document.querySelector('.navigation');
-        let main = document.querySelector('.main');
-        toggle.classList.toggle('active')
-        navigation.classList.toggle('active')
-        main.classList.toggle('active')
-      }
-    </script>
+    
   </body>
 </html>
