@@ -15,9 +15,9 @@
           <span class="title">Tableau de bord</span>
         </a>
       </li>
-      <li class="slot"></li>
+      <li class="creneau"></li>
       <li>
-        <a href="#">
+        <a href="http://localhost/ProjetPPE/view/reservation">
           <span class="icon"><i class="fas fa-book"></i></span>
           <span class="title">Réservation</span>
         </a>

@@ -12,11 +12,11 @@ function adminMenu() {
     res.json().then(data => {
 
       if (data.matter != 'Professeur' && data.matter != 'Receptionniste') {
-        document.querySelector('.slot').innerHTML += `
-          <a href="http://localhost/ProjetPPE/view/slot">
+        document.querySelector('.creneau').innerHTML += `
+          <a href="http://localhost/ProjetPPE/view/creneau">
             <span class="icon"><i class="fas fa-clock"></i></span>
             <span class="title">Créneaux</span>
-          </a>`
+          </a>`;
       } else return;
     })
   })
