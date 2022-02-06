@@ -20,49 +20,80 @@ session_start();
       
 
       <div class="details">
+
+        <?php include_once('../model/assets/sass/snow.html'); ?>
+
         <div class="recentOrders">
-            <center><h2>Réservation d'équipement</h2></center>
+          <div class="cardHeader">
+            <h2>Réservation d'équipement</h2>
             
-                <div class= "reserv-container">
-
-                    <br><b for="profeseur">Professeur : </b>
-                    <?php echo $_SESSION['userInfo']['nom']; ?>
-                    <?php echo $_SESSION['userInfo']['prenom']; ?></br>
-
-                    <br><b for="cours">Cours : </b>
-                    <select name="cours" id="cours">
-                        <option value="">--Veuillez choisir une option--</option>
-                    </select> </br>
-
-                    <br><b for="classe">Classe : </b>
-                    <select name="classe" id="classe">
-                        <option value="">--Veuillez choisir une option--</option>
-                    </select> </br>
-
-                    <br><b for="date">Date de réservation : </b>
-                    <input type="date" id="date" /></br>
-
-                    <br><b for=" H-reservation ">Heure de réservation : </b>
-                    <input type="time" id=" H-reservation " /></br>
-                
-                    <br><b for="equipement">Equipement : </b>
-                    <select name="equipement" id="equipement">
-                        <option value="">--Veuillez choisir une option--</option>
-                        <option value="">--Vidéo Projecteur--</option>
-                        <option value="">--Multiprise--</option>
-                        <option value="">--Ordinateur--</option>
-                    </select> </br>
-                    
-                    <div class="ButtonBox">
-                    <div class="button">
-                        <br><input class="button" type="button" id="button-reserv" value="Réserver"></br>
-                    </div>
-                    <div class="button">
-                        <br><input class="button" type="button" id="button-cancel" value="Annuler"></br>
-                </div>
+            <div class= "reserv-container">
+              <div class="row">
+								<div class="select">
+                  Professeur :
+                  <?php echo $_SESSION['userInfo']['nom']; ?>
+                  <?php echo $_SESSION['userInfo']['prenom']; ?>
+								</div>
               </div>
-            </tbody>
-          </table>
+
+              
+              <div class="row">
+								<div class="select">
+                  <b for="cours">Cours : </b>
+                  <select name="cours" id="cours">
+                      <option value="">--Veuillez choisir une option--</option>
+                  </select>
+								</div>
+              </div>
+
+              
+              <div class="row">
+								<div class="select">
+                  <b for="classe">Classe : </b>
+                  <select name="classe" id="classe">
+                      <option value="">--Veuillez choisir une option--</option>
+                  </select> 
+								</div>
+              </div>
+
+              
+              <div class="row">
+								<div class="select">
+                  <b for="date">Date de réservation : </b>
+                  <input type="date" id="date" />
+								</div>
+              </div>
+
+
+              <div class="row">
+								<div class="select">
+                  <b for=" H-reservation ">Heure de réservation : </b>
+                  <input type="time" id=" H-reservation " />
+								</div>
+              </div>
+
+
+              <div class="row">
+								<div class="select">
+                  <b for="equipement">Equipement : </b>
+                  <select name="equipement" id="equipement">
+                      <option value="">--Veuillez choisir une option--</option>
+                      <option value="">--Vidéo Projecteur--</option>
+                      <option value="">--Multiprise--</option>
+                      <option value="">--Ordinateur--</option>
+                  </select> 
+								</div>
+              </div>
+
+
+            </div>
+              
+            <div class="button">
+              <a href="http://localhost/ProjetPPE/view/menu"><input type="button" value='Annulé'></a>
+              <input type="submit" value="Valider">
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ include_once('../model/controllers/CheckUp.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboad</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../css/slot.css">
+    <link rel="stylesheet" type="text/css" href="../css/creneau.css">
   </head>
   
   <body onload="adminMenu(), creanauMenu('prof')">
@@ -22,7 +22,7 @@ include_once('../model/controllers/CheckUp.php');
 
       <div class="details">
 				
-      <?php include_once('../model/assets/sass/snow.html'); ?>
+      	<?php include_once('../model/assets/sass/snow.html'); ?>
         
 				<div class="recentOrders">
           <div class="cardHeader">
@@ -65,18 +65,16 @@ include_once('../model/controllers/CheckUp.php');
 								<div class="select">
 									<label>Classe</label>
 									<select id="classe" name="classe">
-										<option value="select">⏱</option>
+										<option value="select">Selectionner un enseignement</option>
 									</select>
 								</div>
 							</div>
 							
 							<div class="row">
-								<div class="select">
-									<label for="country">Matiere</label>
-									<select id="country" name="country">
-										<option value="australia">Australia</option>
-										<option value="canada">Canada</option>
-										<option value="usa">USA</option>
+								<div class="select" onclick="creanauMenu('matiere', this)">
+									<label>Matiere</label>
+									<select id="matiere" name="matiere">
+										<option value="select">Selectionner une matiere</option>
 									</select>
 								</div>
 							</div>
@@ -85,20 +83,35 @@ include_once('../model/controllers/CheckUp.php');
 								<div class="select">
 									<label for="country">Salle de classe</label>
 									<select id="country" name="country">
-										<option value="australia">Australia</option>
-										<option value="canada">Canada</option>
-										<option value="usa">USA</option>
+										<option value="0">Selectionner une salle</option>
+										<option value="01">Salle N° 1</option>
+										<option value="02">Salle N° 2</option>
+										<option value="03">Salle N° 3</option>
+										<option value="04">Salle N° 4</option>
+										<option value="05">Salle N° 5</option>
+										<option value="06">Salle N° 6</option>
+										<option value="07">Salle N° 7</option>
+										<option value="08">Salle N° 8</option>
+										<option value="09">Salle N° 9</option>
+										<option value="10">Salle N° 10</option>
+										<option value="11">Salle N° 11</option>
+										<option value="12">Salle N° 12</option>
+										<option value="13">Salle N° 13</option>
+										<option value="14">Salle N° 14</option>
+										<option value="15">Salle N° 15</option>
 									</select>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="select">
-									<label for="country">Jour</label>
+									<label>Jour</label>
 									<select id="country" name="country">
-										<option value="australia">Australia</option>
-										<option value="canada">Canada</option>
-										<option value="usa">USA</option>
+										<option id="1" value="Lundi">Lundi</option>
+										<option id="2"value="Mardi">Mardi</option>
+										<option id="3"value="Mercredi">Mercredi</option>
+										<option id="4"value="Jeudi">Jeudi</option>
+										<option id="5"value="Vendredi">Vendredi</option>
 									</select>
 								</div>
 							</div>
@@ -106,22 +119,13 @@ include_once('../model/controllers/CheckUp.php');
 							<div class="row">
 								<div class="select">
 									<label for="country">Heure début</label>
-									<select id="country" name="country">
-										<option value="australia">Australia</option>
-										<option value="canada">Canada</option>
-										<option value="usa">USA</option>
-									</select>
+									<input type="time" id="timeD"/>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="select">
-									<label for="country">Heure fin</label>
-									<select id="country" name="country">
-										<option value="australia">Australia</option>
-										<option value="canada">Canada</option>
-										<option value="usa">USA</option>
-									</select>
+									<label for="country">Heure fin</label>						<input type="time" id="timeF"/>
 								</div>
 							</div>
 						</div>

@@ -50,7 +50,6 @@ include_once('../../model/controllers/CheckUp.php');
               <tr>
                 <td>Pseudo</td>
                 <td><?php echo $_SESSION['userInfo']['pseudo']; ?></td>
-                <td><span class="status edit"><i class="fas fa-pencil-alt"></i></span></td>
               </tr>
               <tr>
                 <td>Nom</td>

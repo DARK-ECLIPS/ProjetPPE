@@ -28,8 +28,6 @@ CREATE TABLE equipement(
 	statut_equipement varchar(10) not null,
 	primary key (id_equipement));
 
-CREATE type type_enseignement_classe as ENUM ('COLLEGE', 'LYCEE', 'BTS');
-
 CREATE TABLE enseignement(
 	id_enseignement serial,
 	type_classe varchar(10), // problème ici
@@ -141,18 +139,6 @@ insert into autorisation values ('12345678901', '12');
 insert into autorisation values ('12345678901', '13');
 insert into autorisation values ('12345678901', '14');
 
-insert into autorisation values ('12345678902', '4');
-insert into autorisation values ('12345678902', '5');
-insert into autorisation values ('12345678902', '6');
-insert into autorisation values ('12345678902', '7');
-insert into autorisation values ('12345678902', '8');
-insert into autorisation values ('12345678902', '9');
-insert into autorisation values ('12345678902', '10');
-insert into autorisation values ('12345678902', '11');
-insert into autorisation values ('12345678902', '12');
-insert into autorisation values ('12345678902', '13');
-insert into autorisation values ('12345678902', '14');
-
 
 insert into comporte values ('1','12');
 insert into comporte values ('3','4');
@@ -168,7 +154,22 @@ insert into comporte values ('2','14');
 
 insert into enseignement (type_classe) values ('COLLEGE'), ('LYCEE'), ('BTS');
 
-INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('3', 'SIO 2', 32)
-INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('2', 'Terminal 1', 65)
-INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('1', '6eme', 12)
-INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('1', '5eme', 20)
+INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('3', 'SIO 2', 32);
+INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('2', 'Terminal 1', 65);
+INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('1', '6eme', 12);
+INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('1', '5eme', 20);
+
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Maths', '1', '5eme');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Français', '1', '5eme');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Histoire', '1', '5eme');
+
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Français', '1', '6eme');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Histoire', '1', '6eme');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Informatique', '1', '6eme');
+
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Maths', '2', 'Terminal 1');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Français', '2', 'Terminal 1');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Histoire', '2', 'Terminal 1');
+
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('Maths', '3', 'SIO 2');
+INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('D3 BDD', '3', 'SIO 2');

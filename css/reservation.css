@@ -5,10 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
-body
-{
-overflow-x: hidden;
+  overflow: hidden;
 }
 .container
 {
@@ -174,54 +171,11 @@ overflow-x: hidden;
   height: 100%;
   object-fit: cover;
 }
-.ButtonBox
-{
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-gap: 20px;
-}
-.ButtonBox .button
-{
-  position: relative;
-  background: #FFF;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  border-radius: 20px;
-}
-input#button-reserv 
-{
-  background: #61d190
-}
-
-input#button-cancel 
-{
-background: #fa6767
-}
-.cardBox .card .number
-{
-  position: relative;
-  font-size: 2em;
-  font-weight: 500;
-}
-.cardBox .card .cardName
-{
-  color: #999;
-}
-.cardBox .card .iconBox
-{
-  font-size: 2.5em;
-  color: #03A9F4;
-}
 .details
 {
   position: relative;
   width: 100%;
-  padding: 300px;
+  padding: 20px;
   padding-top: 20px;
 }
 .details .user
@@ -248,9 +202,10 @@ background: #fa6767
 .details .recentOrders
 {
   position: relative;
-  min-height: 230px;
-  background: #FFF;
-  padding: 60px;
+  min-height: 530px;
+  background: #FFF0;
+  padding: 20px;
+  padding-top: 5%;
   border-radius: 20px;
 }
 .details .pass a
@@ -281,120 +236,89 @@ background: #fa6767
 }
 .cardHeader
 {
+  position: relative;
+  margin: auto;
+  width: 700px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  background-color: #FFF;
+  /* justify-content: space-between;
+  align-items: flex-start; */
+  border: 5px solid #dbdada;
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 20px;
 }
 .cardHeader h2
 {
-  font-weight: 600;
+  font-size: 25px;
+  padding-top: 20px;
+  height: 15%;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
-.btn
+.cardHeader .reserv-container
 {
-  position: relative;
-  padding: 5px 10px;
-  background: #03A9F4;
-  color: #FFF;
-  text-decoration: none;
-  border-radius: 6px;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.details table
+.cardHeader .reserv-container .row
+{
+  width: 80%;
+  padding: 5px;
+}
+.reserv-container .row .select
+{
+  display: flex;
+  justify-content: space-between;
+}
+.cardHeader .button
+{
+  display: flex;
+  padding-inline: 50px;
+  padding-top: 50px;
+  justify-content: space-between;
+}
+input[type='button']
 {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.details table thead td
-{
-  font-weight: 600;
-}
-.details .recentOrders table tr
-{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.details .recentOrders table tbody tr:last-child
-{
-  border-bottom: none;
-}
-.details .recentOrders table tbody tr:hover
-{
-  background: #03A9F4;
-  color: #FFF;
-}
-.details .recentOrders table tr td
-{
-  padding: 9px 5px;
-}
-.details .recentOrders table thead tr td:nth-child(2),
-.details .recentOrders table tbody tr td:nth-child(2)
-{
-  text-align: center;
-  padding-right: 20px;
-}
-.details .recentOrders table thead tr td:nth-child(3),
-.details .recentOrders table tbody tr td:nth-child(3)
-{
-  text-align: right;
-}
-.status
-{
-  position: relative;
-  padding: 2px 4px;
-  color: #FFF;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 300;
+  background: #FF0000;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
   letter-spacing: 1px;
-}
-.edit
-{
-  background: #1795CE;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 150px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.details .recentCustomers
+input[type=submit]
 {
-  position: relative;
-  min-height: 530px;
-  background: #FFF;
-  padding: 20px;
-}
-.details .recentCustomers .imgBx
-{
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.details .recentCustomers .imgBx img
-{
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.details .recentCustomers table tr td h4 span
-{
-  font-size: 14px;
-  color: #999;
-}
-.details .recentCustomers table tr:hover,
-.details .recentCustomers table tr:hover td h4 span
-{
-  background: #03A9F4;
-  color: #FFF;
-}
-.details .recentCustomers table tr td
-{
-  padding: 7px 10px;
-}
-.details .recentCustomers table tr td h4
-{
+  background: rgb(255, 255, 255);
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.2em;
+  letter-spacing: 1px;
+  color: #666;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 150px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 /* Responsive */
@@ -420,18 +344,10 @@ background: #fa6767
     width: calc(100% - 300px);
     left: 300px;
   }
-  .cardBox
-  {
-    grid-template-columns: repeat(2,1fr);
-  }
 }
 
 @media (max-width: 768px)
 {
-  .details
-  {
-    grid-template-columns: repeat(1,1fr);
-  }
   .cardHeader h2
   {
     font-weight: 600;
@@ -441,18 +357,6 @@ background: #fa6767
 
 @media (max-width: 480px)
 {
-  .cardBox
-  {
-    grid-template-columns: repeat(1,1fr);
-  }
-  .details .recentCustomers
-  {
-    overflow: auto;
-  }
-  .details .recentCustomers table
-  {
-    width: 600px;
-  }
   .navigation
   {
     width: 100%;
