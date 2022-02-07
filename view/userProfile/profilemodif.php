@@ -9,7 +9,7 @@ include_once('../../model/controllers/CheckUp.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboad</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../../css/profile.css">
+    <link rel="stylesheet" type="text/css" href="../../css/profilemodif.css">
   </head>
   
   <body>
@@ -22,28 +22,6 @@ include_once('../../model/controllers/CheckUp.php');
 
       <div class="details">
         <div class="recentOrders">
-          <div class="cardHeader">
-            <div class="user">
-              <a>
-                <img src="<?php echo $_SESSION['userInfo']['avatar']; ?>" />
-              </a>
-              <a href="avatar">
-                <span class="icon"><i class="fas fa-pencil-alt"></i></span>
-              </a>
-            </div>
-            <div class="pass">
-              <a href="password">
-                <span class="icon"><i class="fas fa-unlock-alt"></i></span>
-                <span class="title">Modifier le mot de passe</span>
-              </a>
-            </div>
-            <div class="pass">
-              <a href="profilemodif">
-                <span class="icon"><i class="fas fa-user-edit"></i></span>
-                <span class="title">Modifier les information de compte</span>
-              </a>
-            </div>
-          </div>
           <table>
             <thead>
               <tr>
@@ -68,10 +46,12 @@ include_once('../../model/controllers/CheckUp.php');
               <tr>
                 <td>Téléphone</td>
                 <td><?php echo $_SESSION['userInfo']['tel']; ?></td>
+                <td><span class="status edit"><i class="fas fa-pencil-alt"></i></span></td>
               </tr>
               <tr>
                 <td>Mail</td>
                 <td><?php echo $_SESSION['userInfo']['email']; ?></td>
+                <td><span class="status edit"><i class="fas fa-pencil-alt"></i></span></td>
               </tr>
               <tr>
                 <td>Genre</td>
@@ -79,6 +59,14 @@ include_once('../../model/controllers/CheckUp.php');
               </tr>
             </tbody>
           </table>
+          <div class="cardHeader">
+            <div class="pass">
+              <a href="profile">
+                <span class="icon"><i class="fas fa-user-alt"></i></span>
+                <span class="title">Retourné vers votre profile</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ section
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #59dcf3,#8dd3df);
+  background: linear-gradient(to bottom, #f4d8cb,#ffb09d);
 }
 section .color
 {
@@ -31,7 +31,7 @@ section .color:nth-child(1)
   top: -350px;
   width: 800px;
   height: 800px;
-  background: #2ddff3;
+  background: #ddb4a1;
 }
 section .color:nth-child(2)
 {
@@ -47,21 +47,21 @@ section .color:nth-child(3)
   left: 100;
   width: 500px;
   height: 500px;
-  background: #00D2FF;
+  background: #f9cab4;
 }
 section .color:nth-child(4)
 {
   left: 0;
   width: 900px;
   height: 900px;
-  background: #03BCF4;
+  background: #d1b3a5;
 }
 section .color:nth-child(5)
 {
   right: 0;
   width: 900px;
   height: 900px;
-  background: #00cafc;
+  background: #F4D8CB;
 }
 #container {
   position: relative;
@@ -128,9 +128,9 @@ section .color:nth-child(5)
 
 .form .inputBox [type=text]:hover, .form .inputBox [type=password]:hover
 {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.432);
   color: #000000;
-  border: 1px solid #598FF3;
+  border: 1px solid #ffa277;
 }
 
 input[type=submit]
@@ -157,7 +157,7 @@ input[type=submit]
 input[type=submit]:hover
 {
   color: #666;
-  border: 1px solid #598FF3;
+  border: 1px solid #ffa277;
 }
 .forget
 {

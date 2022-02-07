@@ -20,7 +20,7 @@ overflow-x: hidden;
   position: fixed;
   width: 300px;
   height: 100%;
-  background: #003147;
+  background: #99271D;
   transition: 0.5s;
   overflow: hidden;
 }
@@ -43,7 +43,7 @@ overflow-x: hidden;
 }
 .navigation ul li:hover
 {
-  background: #03A9F4;
+  background: #C1491F;
 }
 .navigation ul li:nth-child(1)
 {
@@ -206,7 +206,7 @@ overflow-x: hidden;
 .cardBox .card .iconBox
 {
   font-size: 2.5em;
-  color: #03A9F4;
+  color: #99271D;
 }
 .details
 {
@@ -240,7 +240,7 @@ overflow-x: hidden;
 {
   position: relative;
   padding: 5px 10px;
-  background: #03A9F4;
+  background: #99271D;
   color: #FFF;
   text-decoration: none;
   border-radius: 6px;
@@ -265,7 +265,7 @@ overflow-x: hidden;
 }
 .details .recentOrders table tbody tr:hover
 {
-  background: #03A9F4;
+  background: #99271D;
   color: #FFF;
 }
 .details .recentOrders table tr td
@@ -348,7 +348,7 @@ overflow-x: hidden;
 .details .recentCustomers table tr:hover,
 .details .recentCustomers table tr:hover td h4 span
 {
-  background: #03A9F4;
+  background: #99271D;
   color: #FFF;
 }
 .details .recentCustomers table tr td
