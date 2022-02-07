@@ -71,7 +71,7 @@ include_once('../model/controllers/CheckUp.php');
 							</div>
 							
 							<div class="row">
-								<div class="select" onclick="creanauMenu('matiere', this)">
+								<div class="select">
 									<label>Matiere</label>
 									<select id="matiere" name="matiere">
 										<option value="select">Selectionner une matiere</option>
@@ -125,7 +125,7 @@ include_once('../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select">
-									<label for="country">Heure fin</label>						<input type="time" id="timeF"/>
+									<label for="country">Heure fin</label><input type="time" id="timeF"/>
 								</div>
 							</div>
 						</div>
