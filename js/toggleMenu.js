@@ -16,7 +16,7 @@ function adminMenu() {
       // Vérifie les data reçus n'est pas un Professeur ou Receptioniste
       if (data.matter != 'Professeur' && data.matter != 'Receptionniste') {
         document.querySelector('.creneau').innerHTML += `
-          <a href="http://localhost/ProjetPPE/view/creneau">
+          <a href="http://localhost/ProjetPPE/view/admin/creneau">
             <span class="icon"><i class="fas fa-clock"></i></span>
             <span class="title">Créneaux</span>
           </a>`;
@@ -32,7 +32,7 @@ function creanauMenu(option, param) {
       res.json().then(data => {
         for (i = 0; i < data.response.length; i++) {
           // On ajoute pour chaque objet de data à la class <select>, où l'id de la balise select est egale à prof
-          document.querySelector('.select select[id=prof]').innerHTML += `<option value="prof">${data.response[i].nom}.${data.response[i].prenom[0]} | ${data.response[i].pseudo}</option>`
+          document.querySelector('.select select[id=prof]').innerHTML += `<option value="${data.response[i].pseudo}">${data.response[i].nom}.${data.response[i].prenom[0]} | ${data.response[i].pseudo}</option>`
         }
       })
     })
@@ -49,10 +49,10 @@ function creanauMenu(option, param) {
         else if (classOption.id != data.response[i].type_classe) classSelect.innerHTML -= classOption
 
         // On ajoute la balise option une valeur par défaut
-        classSelect.innerHTML += `<option>Selectionner une classe</option>`
+        classSelect.innerHTML += `<option value="">Selectionner une classe</option>`
         if (document.querySelector('.select select[id=matiere] option').id) {
           document.querySelector('.select select[id=matiere]').innerHTML -= document.querySelector('.select select[id=matiere] option');
-          document.querySelector('.select select[id=matiere]').innerHTML += `<option>Selectionner une matiere</option>`
+          document.querySelector('.select select[id=matiere]').innerHTML += `<option value="">Selectionner une matiere</option>`
         }
 
         for (i = 0; i < data.response.length; i++) {
@@ -84,7 +84,7 @@ function creanauMenu(option, param) {
               console.log(value, selector.id)
               if (data.response[i].libelle_classe == param.value ) {
                 console.log(param.value, data.response[i].libelle_classe)
-                document.querySelector('.select select[id=matiere]').innerHTML += `<option value="matiere" id="${data.response[i].libelle_classe}">${data.response[i].libelle_matiere}</option>`
+                document.querySelector('.select select[id=matiere]').innerHTML += `<option value="${data.response[i].libelle_matiere}" id="${data.response[i].libelle_classe}">${data.response[i].libelle_matiere}</option>`
               }
             }
             

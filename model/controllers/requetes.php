@@ -25,7 +25,7 @@
         if ($base_donnees -> existe($user)) {
           echo "Connexion en cours....";
           // Redirection sur la page "index.php"
-          echo '<meta http-equiv="refresh" content="0.5;URL=../../index.php?OperaPPE=menu">';
+          echo '<meta http-equiv="refresh" content="0.5;URL=../../index?OperaPPE=menu">';
 
           // Récupération des donnés de l'user
           $userInfo = $base_donnees->getUser($_POST['pseudo'])->fetch();
@@ -36,7 +36,7 @@
         } else {
           echo "Information de connexion erronée (Identifiant / Mot de passe)";
           // Redirection sur la page "index.php"
-          echo '<meta http-equiv="refresh" content="2;URL=../../view/login.php">';
+          echo '<meta http-equiv="refresh" content="2;URL=../../view/login">';
         }
       }
 
@@ -54,14 +54,14 @@
               ?>
               <script>
                 alert("Mot de passe mis à jour avec succès");
-                window.location = "http://localhost/ProjetPPE/view/userProfile/profile.php";
+                window.location = "http://localhost/ProjetPPE/view/userProfile/profile";
               </script>
             <?php
             } else {
               ?>
                 <script>
                   alert("Le nouveau mot de passe ne doit pas être le même que l'ancien");
-                  window.location = "http://localhost/ProjetPPE/view/userProfile/password.php";
+                  window.location = "http://localhost/ProjetPPE/view/userProfile/password";
                 </script>
               <?php
             }
@@ -69,7 +69,7 @@
             ?>
               <script>
                 alert("La confirmation du passe n'est identique au nouveau mot de passe");
-                window.location = "http://localhost/ProjetPPE/view/userProfile/password.php";
+                window.location = "http://localhost/ProjetPPE/view/userProfile/password";
               </script>
             <?php
           }
@@ -77,10 +77,54 @@
           ?>
             <script>
               alert("Mot de Passe Incorrect");
-              window.location = "http://localhost/ProjetPPE/view/userProfile/password.php";
+              window.location = "http://localhost/ProjetPPE/view/userProfile/password";
             </script>
           <?php
         }
+      }
+
+      // Requete de la vue Creneau
+      else if ($_POST['OperaPPE'] == 'creneau') {
+
+        // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
+        // Par la suite on récupère dans la BDD les infos qu'il nous manque
+
+        // On récupère les le pseudo du professeur puis on fait une requete pour récupérer l'id du professeur ayant un pseudo similaire
+        foreach ($_POST['prof'] as $select) {
+          $prof = $conn_db->getDB()->query("SELECT `id_utilisateur` from utilisateur where concat(pseudo =  '".$select."')")->fetch();
+          $profID = $prof['id_utilisateur'];
+        };
+
+        $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+        $schoolID = $school['id_enseignement'];
+
+        foreach ($_POST['classe'] as $select) {
+          $classe = $select;
+        };
+
+        foreach ($_POST['matiere'] as $select) {
+          $matiere = $select;
+        };
+
+        $matiere = $conn_db->getDB()->query("SELECT `id_matiere` from matiere where libelle_matiere = '".$matiere."' AND libelle_classe = '".$classe."'")->fetch();
+        $matiereID = $matiere['id_matiere'];
+
+        foreach ($_POST['salle'] as $select) {
+          $room = $select;
+        };
+        foreach ($_POST['jour'] as $select) {
+          $days = $select;
+        };
+        foreach ($_POST['heureD'] as $select) {
+          $startH = $select;
+        };
+        foreach ($_POST['heureF'] as $select) {
+          $endH = $select;
+        };
+
+        // On ajoute le creneau dans la BDD
+        $conn_db->getDB()->query("INSERT INTO creneau (id_utilisateur, id_enseignement, libelle_classe, id_matiere, edt_jour, edt_heure_deb, edt_heure_fin, salle_de_classe) VALUES ('".$profID."', '".$schoolID."', '".$classe."', '".$matiereID."', '".$days."', '".$startH."', '".$endH."', '".$room."')");
+        
       }
 
     } else if ($_GET['OperaPPE'] == 'logout') {
@@ -106,7 +150,7 @@
       
       // Finalement, on détruit la session.
       session_destroy();
-      echo '<meta http-equiv="refresh" content="0.5;URL=../../view/login.php">';
+      echo '<meta http-equiv="refresh" content="0.5;URL=../../view/login">';
 
     }
   }
