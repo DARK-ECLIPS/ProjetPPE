@@ -1,7 +1,7 @@
 <script src="http://localhost/ProjetPPE/js/toggleMenu.js"></script>
 
 <div class="container">
-  <div class="navigation" onload="adminMenu()">
+  <div class="navigation">
     <ul>
       <li>
         <a href="http://localhost/ProjetPPE/view/menu">

@@ -35,7 +35,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select">
-									<label>Nom du professeur</label>
+									<label>Nom du professeur :</label>
 									<select id="prof" name="prof[]" required>
 										<option value="">Selectionner un professeur</option>
 									</select>
@@ -44,7 +44,6 @@ include_once('../../model/controllers/CheckUp.php');
 
 
 							<div class="row">
-							<!-- <div class="row" onchange="creanauMenu(this)"> -->
 								<div class="checkbox">
 									<div>
 										<input type="radio" id="case1" name="enseignement" value="COLLEGE" onchange="creanauMenu('checkbox', this)">
@@ -66,7 +65,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select">
-									<label>Classe</label>
+									<label>Classe :</label>
 									<select id="classe" name="classe[]" required>
 										<option value="">Selectionner un enseignement</option>
 									</select>
@@ -75,7 +74,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select">
-									<label>Matiere</label>
+									<label>Matiere :</label>
 									<select id="matiere" name="matiere[]" required>
 										<option value="">Selectionner une matiere</option>
 									</select>
@@ -84,7 +83,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select" required>
-									<label for="">Salle de classe</label>
+									<label for="">Salle de classe :</label>
 									<select id="salle" name="salle[]">
 										<option value="">Selectionner une salle</option>
 										<option value="01">Salle N° 1</option>
@@ -108,7 +107,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select" required>
-									<label>Jour</label>
+									<label>Jour :</label>
 									<select id="jour" name="jour[]">
 										<option id="1" value="Lundi">Lundi</option>
 										<option id="2" value="Mardi">Mardi</option>
@@ -121,7 +120,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select">
-									<label for="time">Debut cour</label>
+									<label for="time">Debut cours :</label>
 									
 									<select id="heureD" name="heureD[]" required>
 										<option id="0" value="7:00">7:00</option>
@@ -145,7 +144,7 @@ include_once('../../model/controllers/CheckUp.php');
 										<option id="19" value="16:00">16:00</option>
 									</select>
 									
-									<label for="time">Fin cour</label>
+									<label for="time">Fin cours :</label>
 									<select id="heureF" name="heureF[]" required>
 										<option id="3" value="8:00">8:00</option>
 										<option id="4" value="8:30">8:30</option>

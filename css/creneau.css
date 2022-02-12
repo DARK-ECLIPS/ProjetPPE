@@ -65,7 +65,7 @@
   display: block;
   min-width: 60px;
   height: 60px;
-  line-height: 60px;
+  line-height: 65px;
   text-align: center;
 }
 .navigation ul li a .icon .fas
@@ -263,12 +263,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
 }
 .cardHeader .content .row
 {
   width: 80%;
   padding: 5px;
-  font-weight: 500;
+  font-weight: bold;
 }
 .content .row .select, 
 .content .row .checkbox

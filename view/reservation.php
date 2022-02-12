@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../css/reservation.css">
   </head>
   
-  <body>
+  <body onload="adminMenu(), reservationMenu('cours')">
     <?php include_once('model/navigation.php'); ?>
 
     <div class="main">
@@ -24,22 +24,21 @@ session_start();
         <?php include_once('../model/assets/sass/snow.html'); ?>
 
         <div class="recentOrders">
-          <div class="cardHeader">
+          <div class="cardHeader"> 
             <h2>Réservation d'équipement</h2>
             
             <div class= "reserv-container">
               <div class="row">
 								<div class="select">
                   Professeur :
-                  <?php echo $_SESSION['userInfo']['nom']; ?>
-                  <?php echo $_SESSION['userInfo']['prenom']; ?>
+                  <a><?php echo "".$_SESSION['userInfo']['nom']." ".$_SESSION['userInfo']['prenom']." "; ?></a>
 								</div>
               </div>
 
               
               <div class="row">
 								<div class="select">
-                  <b for="cours">Cours : </b>
+                  <label for="cours">Cours : </label>
                   <select name="cours" id="cours">
                       <option value="">--Veuillez choisir une option--</option>
                   </select>
@@ -49,7 +48,7 @@ session_start();
               
               <div class="row">
 								<div class="select">
-                  <b for="classe">Classe : </b>
+                  <label for="classe">Classe : </label>
                   <select name="classe" id="classe">
                       <option value="">--Veuillez choisir une option--</option>
                   </select> 
@@ -59,7 +58,7 @@ session_start();
               
               <div class="row">
 								<div class="select">
-                  <b for="date">Date de réservation : </b>
+                  <label for="date">Date de réservation : </label>
                   <input type="date" id="date" />
 								</div>
               </div>
@@ -67,7 +66,7 @@ session_start();
 
               <div class="row">
 								<div class="select">
-                  <b for=" H-reservation ">Heure de réservation : </b>
+                  <label for=" H-reservation ">Heure de réservation : </label>
                   <input type="time" id=" H-reservation " />
 								</div>
               </div>
@@ -75,7 +74,7 @@ session_start();
 
               <div class="row">
 								<div class="select">
-                  <b for="equipement">Equipement : </b>
+                  <label for="equipement">Equipement : </label>
                   <select name="equipement" id="equipement">
                       <option value="">--Veuillez choisir une option--</option>
                       <option value="">--Vidéo Projecteur--</option>
