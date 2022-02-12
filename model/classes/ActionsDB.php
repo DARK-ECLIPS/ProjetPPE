@@ -68,8 +68,8 @@
 
 		public function getAvatar($sexe)
 		{
-			if ($sexe == 'Femme') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
-			else if ($sexe == 'Homme') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
+			if ($sexe == 'FEMME') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
+			else if ($sexe == 'HOMME') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
 			else return 'http://localhost/ProjetPPE/model/assets/images/manwo.png';
 		}
 

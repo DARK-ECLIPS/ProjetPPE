@@ -1,7 +1,7 @@
 <?php
 
-require '../../classes/ConnexionDB.php';
-require '../../classes/ActionsDB.php';
+require '../../../classes/ConnexionDB.php';
+require '../../../classes/ActionsDB.php';
 
 $conn_db = new ConnexionDB();
 $base_donnees = new ActionsDB($conn_db);

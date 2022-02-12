@@ -103,7 +103,7 @@
         };
 
         foreach ($_POST['matiere'] as $select) {
-          $matiere = $select;
+          $matiere = $select; 
         };
 
         $matiere = $conn_db->getDB()->query("SELECT `id_matiere` from matiere where libelle_matiere = '".$matiere."' AND libelle_classe = '".$classe."'")->fetch();
@@ -124,7 +124,13 @@
 
         // On ajoute le creneau dans la BDD
         $conn_db->getDB()->query("INSERT INTO creneau (id_utilisateur, id_enseignement, libelle_classe, id_matiere, edt_jour, edt_heure_deb, edt_heure_fin, salle_de_classe) VALUES ('".$profID."', '".$schoolID."', '".$classe."', '".$matiereID."', '".$days."', '".$startH."', '".$endH."', '".$room."')");
-        
+
+        ?>
+          <script>
+            alert("Creneau Ajouter avec succès");
+            window.location = "http://localhost/ProjetPPE/view/admin/adminMenu";
+          </script>
+        <?php
       }
 
     } else if ($_GET['OperaPPE'] == 'logout') {
