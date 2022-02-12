@@ -38,13 +38,12 @@ session_start();
               
               <div class="row">
 								<div class="select">
-                  <label for="cours">Cours : </label>
-                  <select name="cours" id="cours">
-                      <option value="">--Veuillez choisir une option--</option>
-                  </select>
+                  <label for="date">Date de réservation : </label>
+                  <input type="date" id="date" />
 								</div>
               </div>
 
+              
               
               <div class="row">
 								<div class="select">
@@ -55,13 +54,6 @@ session_start();
 								</div>
               </div>
 
-              
-              <div class="row">
-								<div class="select">
-                  <label for="date">Date de réservation : </label>
-                  <input type="date" id="date" />
-								</div>
-              </div>
 
 
               <div class="row">
