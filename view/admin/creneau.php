@@ -74,7 +74,7 @@ include_once('../../model/controllers/CheckUp.php');
 							
 							<div class="row">
 								<div class="select">
-									<label>Matiere :</label>
+									<label>Matière :</label>
 									<select id="matiere" name="matiere[]" required>
 										<option value="">Selectionner une matiere</option>
 									</select>
@@ -174,7 +174,7 @@ include_once('../../model/controllers/CheckUp.php');
 
 					
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/menu"><input type="button" name="time" value='Annulé'></a>
+							<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" name="time" value='Annulé'></a>
 							<input type="submit" value="Valider">
 						</div>
 
