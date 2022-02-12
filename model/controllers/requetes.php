@@ -17,6 +17,9 @@
 	*/
   if (isset($_GET['OperaPPE'])) {
     if ($_GET['OperaPPE'] == '4441524b2045434e454c4953') {
+
+      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
       if ($_POST['OperaPPE'] == 'login') {
 
         // Création d'un objet "Users"
@@ -39,6 +42,8 @@
           echo '<meta http-equiv="refresh" content="2;URL=../../view/login">';
         }
       }
+
+      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
       else if ($_POST['OperaPPE'] == 'password') {
         session_start();
@@ -82,6 +87,8 @@
           <?php
         }
       }
+      
+      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
       // Requete de la vue Creneau
       else if ($_POST['OperaPPE'] == 'creneau') {
@@ -132,6 +139,29 @@
           </script>
         <?php
       }
+
+      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+      // Requete de la vue Matiere
+      else if ($_POST['OperaPPE'] == 'matiere') {
+
+        // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
+        // Par la suite on récupère dans la BDD les infos qu'il nous manque
+
+        $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+        $schoolID = $school['id_enseignement'];
+
+        foreach ($_POST['classe'] as $select) {
+          $classe = $select;
+        };
+
+        // On ajoute le creneau dans la BDD
+        $conn_db->getDB()->query("INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('".$_POST['matiere']."', '".$schoolID."', '".$classe."')");
+        
+        echo "<script>alert('La Matiere $_POST[matiere] à été ajouter à la classe $classe avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
+      }
+
+      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
     } else if ($_GET['OperaPPE'] == 'logout') {
 

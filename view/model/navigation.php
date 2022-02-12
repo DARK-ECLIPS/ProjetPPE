@@ -30,8 +30,8 @@
       </li>
       <li>
         <a href="http://localhost/ProjetPPE/view/userProfile/profile">
-          <span class="icon"><i class="fas fa-cog"></i></span>
-          <span class="title">Réglages</span>
+          <span class="icon"><i class="fas fa-user-cog"></i></span>
+          <span class="title">Profile</span>
         </a>
       </li>
       <li>
