@@ -8,6 +8,8 @@ function toggleMenu() {
   main.classList.toggle('active')
 }
 
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
 // Verifie si l'utilisateur est une administrateur
 function adminMenu() {
   // Récupère au lien suivant les data de session de l'utilisateur
@@ -16,14 +18,16 @@ function adminMenu() {
       // Vérifie les data reçus n'est pas un Professeur ou Receptioniste
       if (data.matter != 'Professeur' && data.matter != 'Receptionniste') {
         document.querySelector('.creneau').innerHTML += `
-          <a href="http://localhost/ProjetPPE/view/admin/creneau">
-            <span class="icon"><i class="fas fa-clock"></i></span>
-            <span class="title">Créneaux</span>
+          <a href="http://localhost/ProjetPPE/view/admin/adminMenu">
+            <span class="icon"><i class="fas fa-user-lock"></i></span>
+            <span class="title">Paramètre Admin</span>
           </a>`;
       } else return;
     })
   })
 }
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
 // Complete le formulaire de creneau (<option>, [param])
 function creanauMenu(option, param) {
@@ -37,7 +41,7 @@ function creanauMenu(option, param) {
       })
     })
   } else if (option == "checkbox") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/creneau/classe.php').then(res => {
+    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
       res.json().then(data => {
         const classOption = document.querySelector('.select select[id=classe] option');
         const classSelect = document.querySelector('.select select[id=classe]');
@@ -96,7 +100,36 @@ function creanauMenu(option, param) {
     })
   } else return
 }
-// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+// Complete le formulaire de matiere (<option>, [param])
+function matiereMenu(option, param) {
+  if (option == "checkbox") {
+    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
+      res.json().then(data => {
+        const classOption = document.querySelector('.select select[id=classe] option');
+        const classSelect = document.querySelector('.select select[id=classe]');
+
+        // Si il y a pas d'id dans la balise option dans le classe <select>, alors on supprime la balise option
+        if (!classOption.id) classSelect.innerHTML -= classOption
+        
+        // Sinon si le contenue de l'id de la balise option dans la div de classe <select> ne correspond pas à data, alors on surpprime le contenue (on supprime la balise option)
+        else if (classOption.id != data.response[i].type_classe) classSelect.innerHTML -= classOption
+
+        // On ajoute la balise option une valeur par défaut
+        classSelect.innerHTML += `<option value="">Selectionner une classe</option>`
+
+        for (i = 0; i < data.response.length; i++) {
+          // Si le type_classe de data correspond à la valeur de param, alors on ajoute à la classe <select> l'id de la classe ainsi que la balise option avec les bonne data
+          if (data.response[i].type_classe == param.value) classSelect.innerHTML += `<option value="${data.response[i].libelle_classe}" id="${data.response[i].type_classe}">${data.response[i].type_classe}.${data.response[i].libelle_classe}</option>`
+        }
+      })
+    })
+  } else return
+}
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
 function reservationMenu(option, param) {
   if (option == "cours") {
@@ -168,3 +201,5 @@ function reservationMenu(option, param) {
     })
   } else return
 }
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
