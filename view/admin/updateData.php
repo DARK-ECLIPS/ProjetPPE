@@ -76,7 +76,7 @@ $reponse = $base_donnees->getAllUsers();
 
                         <div class="row">
                           <div class="select">
-                          <label>Sexe: </label>
+                            <label>Sexe: </label>
                             <select name="sexe">
                               <option value="NON-DEFINI" selected>Non-Defini</option>
                               <option value="HOMME">Homme</option>
