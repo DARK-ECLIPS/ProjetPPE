@@ -163,6 +163,21 @@
 
       // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
+      elseif ($_GET['operation'] == 'deleteUser') {
+        
+        // Création d'un objet "Users" La seule information qu'on valorise est le pseudo et le mot passe
+
+        $user = new Users($_GET['userID'], "", "", "", "", "", "", "");
+
+        // Supprimer le users
+        $base_donnees->delete($user);
+
+        // Redirection sur la page "users.php"
+        echo '<meta http-equiv="refresh" content="0;URL=http://localhost/ProjetPPE/view/admin/users">';
+      }
+      
+      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
     } else if ($_GET['OperaPPE'] == 'logout') {
 
       // Initialisation de la session.

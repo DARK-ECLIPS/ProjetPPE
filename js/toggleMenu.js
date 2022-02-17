@@ -20,7 +20,7 @@ function adminMenu() {
         document.querySelector('.creneau').innerHTML += `
           <a href="http://localhost/ProjetPPE/view/admin/adminMenu">
             <span class="icon"><i class="fas fa-user-lock"></i></span>
-            <span class="title">Paramètre Admin</span>
+            <span class="title">Espace Admin</span>
           </a>`;
       } else return;
     })

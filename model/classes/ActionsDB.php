@@ -127,15 +127,15 @@
 		// 							'password' => $user->getpassword()));
 		// }
 
-		// public function delete($user)
-		// {
-		// 	$requete = "delete from users
-		// 				where pseudo = :pseudo";
+		public function delete($user)
+		{
+			$requete = "delete from utilisateur
+						where id_utilisateur = :userID";
 
-		// 	$reponse = $this->conn_db->getDB()->prepare($requete);
+			$reponse = $this->conn_db->getDB()->prepare($requete);
 
-		// 	$reponse->execute(array('pseudo' => $user->getPseudo()));
-		// }
+			$reponse->execute(array('userID' => $user->getId()));
+		}
 
 		public function update($pseudo, $user)
 		{
