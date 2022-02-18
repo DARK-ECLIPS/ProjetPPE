@@ -34,10 +34,10 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./matiere">
+          <a href="./matieres">
             <div class="card">
               <div>
-                <div class="name">Ajout Matière</div>
+                <div class="name">Matières</div>
                 <div class="cardName">Ajouter une matiere à un classe</div>
               </div>
               <div class="iconBox">

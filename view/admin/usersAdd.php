@@ -9,7 +9,7 @@ include_once('../../model/controllers/CheckUp.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboad</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../../css/creneau.css">
+    <link rel="stylesheet" type="text/css" href="../../css/usersAdd.css">
   </head>
   
   <body onload="adminMenu(), creanauMenu('prof')">
@@ -32,13 +32,6 @@ include_once('../../model/controllers/CheckUp.php');
 						<h2>Ajout Utilisateur</h2>
 
 						<div class="content">
-							
-							<div class="row">
-								<div class="select">
-									<label>N° Sécurité Sociale :</label>
-                  <input type='text' name='secue  ' required>
-								</div>
-							</div>
 
 
 							<div class="row">
@@ -55,6 +48,13 @@ include_once('../../model/controllers/CheckUp.php');
 										<input type="radio" id="case3" name="enseignement" value="AUTRE" onchange="creanauMenu('checkbox', this)">
 										<label for="case1">Autre</label>
 									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="select">
+									<label>N° Sécurité Sociale :</label>
+                  <input type='text' name='secue  ' required>
 								</div>
 							</div>
 
@@ -98,12 +98,18 @@ include_once('../../model/controllers/CheckUp.php');
                   <input type="email" id="email" pattern=".+@globex\.com" required>
                 </div>
 							</div>
+							
+							<div class="row">
+								<div class="select">
+									<label>Password :</label>
+                  <input type="password" id="password" required>
+                </div>
+							</div>
 						</div>
 
 
-					
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" name="time" value='Annulé'></a>
+							<a href="http://localhost/ProjetPPE/view/admin/users"><input type="button" name="time" value='Annulé'></a>
 							<input type="submit" value="Valider">
 						</div>
 

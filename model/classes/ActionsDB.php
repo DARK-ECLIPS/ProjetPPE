@@ -33,6 +33,13 @@
 			return $this->conn_db->getDB()->query($requete);
 		}
 
+		public function getAllMatieres()
+		{
+			$requete = "select * from matiere";
+
+			return $this->conn_db->getDB()->query($requete);
+		}
+
     public function getUser($user)
     {
       $requete = "SELECT * FROM utilisateur WHERE pseudo = '$user'";
