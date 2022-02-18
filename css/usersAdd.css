@@ -1,3 +1,6 @@
+@import '../model/assets/css/navigation.css';
+@import '../model/assets/css/topbar.css';
+
 .details
 {
   position: relative;
@@ -103,6 +106,10 @@
 {
   display: flex;
   justify-content: space-between;
+}
+.content .row small
+{
+  font-size: small;
 }
 .cardHeader .button
 {
