@@ -1,0 +1,5 @@
+@import '../model/assets/css/tableScroll.css';
+
+tbody td, thead th {
+  width: 13%;
+}
