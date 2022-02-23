@@ -118,13 +118,17 @@ insert into options (libelle_option, lien) values ('Ajouter matière','');
 insert into options (libelle_option, lien) values ('Ajouter classe','');
 
 insert into utilisateur values ('12345678901', 'TRAINING', 'trixie', 'FEMME', '001223344', 'trixie', 'training@lesperseverants.fr', 'test');
+insert into utilisateur values ('21343546788', 'TRAINING', 'Benoie', 'HOMME', '001252674', 'Benoie', 'training@lesperseverants.fr', 'test');
+insert into utilisateur values ('23456765434', 'TRAINING', 'Jeanne', 'FEMME', '001222444', 'Jeanne', 'training@lesperseverants.fr', 'test');
 
 insert into utilisateur values ('12345678902', 'BIABIANY', 'Wilfrid', 'HOMME', '001223344', 'dark', 'training@lesperseverants.fr', 'test');
 
 insert into utilisateur values ('32345678902', 'BIABIANY', 'Wilfrid', 'NON-DEFINI', '001223344', 'darkness', 'darkness@lesperseverants.fr', 'test');
 
-insert into professeur VALUE ('12345678902');
-insert into receptionniste VALUE ('12345678901');
+insert into professeur VALUE ('12345678901');
+insert into professeur VALUE ('21343546788');
+insert into professeur VALUE ('23456765434');
+insert into receptionniste VALUE ('12345678902');
 
 
 insert into autorisation values ('12345678901', '4');
