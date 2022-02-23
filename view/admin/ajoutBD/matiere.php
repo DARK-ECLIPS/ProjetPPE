@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <?php
 session_start();
-include_once('../../model/controllers/CheckUp.php');
+include_once('../../../model/controllers/CheckUp.php');
 ?>
-<!-- echo ($_SESSION['userInfo']['nom']) -->
+
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboad</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../../css/matiere.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/matiere.css">
   </head>
   
   <body>
-    <?php include_once('../model/navigation.php'); ?>
+    <?php include_once('../../model/navigation.php'); ?>
 
     <div class="main">
-
-      <?php include_once('../model/topbar.php'); ?>
+      <?php include_once('../../model/topbar.php'); ?>
       
-
       <div class="details">
-				
-      	<?php include_once('../../model/assets/sass/snow.html'); ?>
+      	<?php include_once('../../../model/assets/sass/snow.html'); ?>
         
 				<div class="recentOrders">
           <div class="cardHeader">
@@ -69,7 +66,7 @@ include_once('../../model/controllers/CheckUp.php');
 						</div>
 					
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" name="time" value='Annulé'></a>
+							<a href="http://localhost/ProjetPPE/view/admin/matieres""><input type="button" name="time" value='Annulé'></a>
 							<input type="submit" value="Valider">
 						</div>
 

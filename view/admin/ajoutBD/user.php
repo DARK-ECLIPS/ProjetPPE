@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <?php
 session_start();
-include_once('../../model/controllers/CheckUp.php');
+include_once('../../../model/controllers/CheckUp.php');
 ?>
-<!-- echo ($_SESSION['userInfo']['nom']) -->
+
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboad</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../../css/usersAdd.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/usersAdd.css">
   </head>
   
   <body onload="adminMenu(), creanauMenu('prof')">
-    <?php include_once('../model/navigation.php'); ?>
+    <?php include_once('../../model/navigation.php'); ?>
 
     <div class="main">
-
-      <?php include_once('../model/topbar.php'); ?>
+      <?php include_once('../../model/topbar.php'); ?>
       
-
       <div class="details">
-				
-      	<?php include_once('../../model/assets/sass/snow.html'); ?>
+      	<?php include_once('../../../model/assets/sass/snow.html'); ?>
         
 				<div class="recentOrders">
           <div class="cardHeader">
@@ -32,7 +29,6 @@ include_once('../../model/controllers/CheckUp.php');
 						<h2>Ajout Utilisateur</h2>
 
 						<div class="content">
-
 
 							<div class="row">
 								<div class="checkbox">
@@ -87,7 +83,6 @@ include_once('../../model/controllers/CheckUp.php');
 								<div class="select" required>
                 <label>N° Téléphone:</label>
                 <input type="tel" id="phone" name="phone" placeholder="0690-453-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
-                <!-- <small>Format: 690-123-456</small> -->
 								</div>
                 <small>Format: 0690-123-456</small>
 							</div>

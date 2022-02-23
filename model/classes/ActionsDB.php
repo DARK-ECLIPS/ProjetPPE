@@ -9,6 +9,9 @@
 
 	class ActionsDB
 	{
+		
+		// // // // // // // // // // // // // // // // CONNEXION BDD // // // // // // // // // // // // // // // // 
+
 		private $conn_db;
 
 		function __construct($conn_db)
@@ -26,6 +29,8 @@
 			return $this->conn_db;
 		}
 
+		// // // // // // // // // // // // // // // // GET ALL FUNCTION // // // // // // // // // // // // // // // // 
+
 		public function getAllUsers()
 		{
 			$requete = "select * from utilisateur";
@@ -40,12 +45,53 @@
 			return $this->conn_db->getDB()->query($requete);
 		}
 
-    public function getUser($user)
+		public function getAllClasses()
+		{
+			$requete = "select * from classe";
+
+			return $this->conn_db->getDB()->query($requete);
+		}
+
+		public function getAllCreneaux()
+		{
+			$requete = "select * from creneau";
+
+			return $this->conn_db->getDB()->query($requete);
+		}
+
+		// // // // // // // // // // // // // // // // SPECIAL FUNCTION // // // // // // // // // // // // // // // // 
+
+		public function getEnseignement($id)
+		{
+			if ($id == 1) return "COLLEGE";
+			else if ($id == 2) return "LYCÉE";
+			else return "BTS";
+		}
+
+		public function getAvatar($sexe)
+		{
+			if ($sexe == 'FEMME') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
+			else if ($sexe == 'HOMME') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
+			else return 'http://localhost/ProjetPPE/model/assets/images/manwo.png';
+		}
+
+		// // // // // // // // // // // // // // // // GET FUNCTION // // // // // // // // // // // // // // // // 
+
+    public function getUser($data, $user)
     {
-      $requete = "SELECT * FROM utilisateur WHERE pseudo = '$user'";
+      $requete = "SELECT * FROM utilisateur WHERE $data = '$user'";
 			
 			return $this->conn_db->getDB()->query($requete);
     }
+
+    public function getMatiere($data, $user)
+    {
+      $requete = "SELECT * FROM matiere WHERE $data = '$user'";
+			
+			return $this->conn_db->getDB()->query($requete);
+    }
+
+
 
     public function getMatter($id)
     {
@@ -73,13 +119,6 @@
 			else return "Professeur";
     }
 
-		public function getAvatar($sexe)
-		{
-			if ($sexe == 'FEMME') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
-			else if ($sexe == 'HOMME') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
-			else return 'http://localhost/ProjetPPE/model/assets/images/manwo.png';
-		}
-
 		public function newSession($userInfo)
 		{
 			// Creation d'une session
@@ -100,7 +139,7 @@
 
 		public function updateSession()
 		{
-			$userInfo = $this->getUser($_SESSION['userInfo']['pseudo'])->fetch(PDO::FETCH_ASSOC);
+			$userInfo = $this->getUser("pseudo", $_SESSION['userInfo']['pseudo'])->fetch(PDO::FETCH_ASSOC);
 
 			$_SESSION["userInfo"] = array('id' => $userInfo['id_utilisateur'],
 																		'pseudo' => $userInfo['pseudo'],

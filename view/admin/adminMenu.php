@@ -34,11 +34,11 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./matieres">
+          <a href="./creneaux">
             <div class="card">
               <div>
-                <div class="name">Matières</div>
-                <div class="cardName">Ajouter une matiere à un classe</div>
+                <div class="name">Créneaux</div>
+                <div class="cardName">Liste des cours des professseur</div>
               </div>
               <div class="iconBox">
                 <i class="fas fa-book-reader"></i>
@@ -46,32 +46,37 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <div class="card">
-            <div>
-              <div class="name">208</div>
-              <div class="cardName">Discution</div>
+          <a href="./matieres">
+            <div class="card">
+              <div>
+                <div class="name">Matières</div>
+                <div class="cardName">Liste des matieres de chaque classe</div>
+              </div>
+              <div class="iconBox">
+                <i class="fas fa-book-reader"></i>
+              </div>
             </div>
-            <div class="iconBox">
-              <i class="far fa-comment-dots"></i>
+          </a>
+
+          <a href="./classes">
+            <div class="card">
+              <div>
+                <div class="name">Classes</div>
+                <div class="cardName">Liste des classes de la BDD</div>
+              </div>
+              <div class="iconBox">
+                <i class="far fa-comment-dots"></i>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div>
-              <div class="name">6,042</div>
-              <div class="cardName">Historique des Réservations</div>
-            </div>
-            <div class="iconBox">
-              <i class="fas fa-tasks"></i>
-            </div>
-          </div>
+          </a>
         </span>
 
         <span class="status edit">
-          <a href="./creneau">
+          <a href="./ajoutBD/user">
             <div class="card">
               <div>
-                <div class="name">Ajout Créneau</div>
-                <div class="cardName">Attribuer un cours à un professeur</div>
+                <div class="name">Ajout Utilisateur</div>
+                <div class="cardName">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
               </div>
               <div class="iconBox">
               <i class="fas fa-address-book"></i>
@@ -79,11 +84,23 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./matiere">
+          <a href="./ajoutBD/creneau">
+            <div class="card">
+              <div>
+                <div class="name">Ajout Créneau</div>
+                <div class="cardName">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+              </div>
+              <div class="iconBox">
+              <i class="fas fa-address-book"></i>
+              </div>
+            </div>
+          </a>
+
+          <a href="./ajoutBD/matiere">
             <div class="card">
               <div>
                 <div class="name">Ajout Matière</div>
-                <div class="cardName">Ajouter une matiere à un classe</div>
+                <div class="cardName">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
               </div>
               <div class="iconBox">
                 <i class="fas fa-book-reader"></i>
@@ -93,17 +110,8 @@ include_once('../../model/controllers/CheckUp.php');
 
           <div class="card">
             <div>
-              <div class="name">208</div>
-              <div class="cardName">Discution</div>
-            </div>
-            <div class="iconBox">
-              <i class="far fa-comment-dots"></i>
-            </div>
-          </div>
-          <div class="card">
-            <div>
-              <div class="name">6,042</div>
-              <div class="cardName">Historique des Réservations</div>
+              <div class="name">???????????</div>
+              <div class="cardName">???????????</div>
             </div>
             <div class="iconBox">
               <i class="fas fa-tasks"></i>
@@ -115,8 +123,8 @@ include_once('../../model/controllers/CheckUp.php');
           <a href="./creneau">
             <div class="card">
               <div>
-                <div class="name">Ajout Créneau</div>
-                <div class="cardName">Attribuer un cours à un professeur</div>
+                <div class="name">???????????</div>
+                <div class="cardName">???????????</div>
               </div>
               <div class="iconBox">
               <i class="fas fa-address-book"></i>
@@ -127,8 +135,8 @@ include_once('../../model/controllers/CheckUp.php');
           <a href="./matiere">
             <div class="card">
               <div>
-                <div class="name">Ajout Matière</div>
-                <div class="cardName">Ajouter une matiere à un classe</div>
+                <div class="name">???????????</div>
+                <div class="cardName">???????????</div>
               </div>
               <div class="iconBox">
                 <i class="fas fa-book-reader"></i>
@@ -138,8 +146,8 @@ include_once('../../model/controllers/CheckUp.php');
 
           <div class="card">
             <div>
-              <div class="name">208</div>
-              <div class="cardName">Discution</div>
+              <div class="name">???????????</div>
+              <div class="cardName">???????????</div>
             </div>
             <div class="iconBox">
               <i class="far fa-comment-dots"></i>
@@ -147,8 +155,8 @@ include_once('../../model/controllers/CheckUp.php');
           </div>
           <div class="card">
             <div>
-              <div class="name">6,042</div>
-              <div class="cardName">Historique des Réservations</div>
+              <div class="name">???????????</div>
+              <div class="cardName">???????????</div>
             </div>
             <div class="iconBox">
               <i class="fas fa-tasks"></i>

@@ -10,7 +10,7 @@ $conn_db = new ConnexionDB();
 $base_donnees = new ActionsDB($conn_db);
 $reponse = $base_donnees->getAllmatieres();
 ?>
-<!-- echo ($_SESSION['userInfo']['nom']) -->
+
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,12 +23,10 @@ $reponse = $base_donnees->getAllmatieres();
     <?php include_once('../model/navigation.php'); ?>
 
     <div class="main">
-
       <?php include_once('../model/topbar.php'); ?>
       
 
       <div class="details">
-				
       	<?php include_once('../../model/assets/sass/snow.html'); ?>
         
 				<div class="recentOrders">

@@ -8,7 +8,7 @@ require '../../model/classes/ActionsDB.php';
 
 $conn_db = new ConnexionDB();
 $base_donnees = new ActionsDB($conn_db);
-$reponse = $base_donnees->getAllUsers();
+$reponse = $base_donnees->getAllClasses();
 ?>
 
 <html>
@@ -32,18 +32,15 @@ $reponse = $base_donnees->getAllUsers();
 				<div class="recentOrders">
           <div class="cardHeader">
 
-						<h1>Affichage utilisateurs</h1>
-						<h2>Affichage utilisateurs</h2>
+						<h1>Affichage Classe</h1>
+						<h2>Affichage de</h2>
 
 						<table class="scrolldown">
 							<thead>
 									<tr>
-											<th>Pseudo</th>
-											<th>Nom</th>
-											<th>Prénom</th>
-											<th>Sexe</th>
-											<th>Mot de passe</th>
-											<th>Mail</th>
+											<th>Enseignement</th>
+											<th>Classe</th>
+											<th>Elèves</th>
 											<th>Supprimer</th>
 											<th>MAJ</th>
 									</tr>
@@ -53,27 +50,24 @@ $reponse = $base_donnees->getAllUsers();
 									while ($donnees = $reponse->fetch()) {
 										?>
 											<tr>
-												<td><?php echo $donnees["pseudo"] ?></td>
-												<td><?php echo $donnees["nom"] ?></td>
-												<td><?php echo $donnees["prenom"] ?></td>
-												<td><?php echo $donnees["sexe"] ?></td>
-												<td><?php echo $donnees["password"] ?></td>
-												<td><?php echo substr_replace($donnees["mail_utilisateur"] ,"",-18) ?></td>
+												<td><?php echo $base_donnees->getEnseignement($donnees["id_enseignement"]) ?></td>
+												<td><?php echo $donnees["libelle_classe"] ?></td>
+												<td><?php echo "$donnees[nbr_eleve] Éleves" ?></td>
 												<td align="center">
-													<a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&userID=<?php echo $donnees["id_utilisateur"] ?>">
+													<!-- <a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&userID=<?php echo $donnees["id_utilisateur"] ?>"> -->
 														<i class="fas fa-trash-alt"></i>
-													</a>
+													<!-- </a> -->
 												</td>
 												<td align="center">
-													<a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php
-														echo '&pseudo='.$donnees["pseudo"]. 
-															'&nom='.$donnees["nom"].
-															'&prenom='.$donnees["prenom"].
-															'&sexe='.$donnees["sexe"].
-															'&mdp='.$donnees["password"].
-															'&mail='.$donnees["mail_utilisateur"].
-															'&id='.$donnees["id_utilisateur"]
-														?>">
+													<!-- <a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php
+														// echo '&pseudo='.$donnees["pseudo"]. 
+														// 	'&nom='.$donnees["nom"].
+														// 	'&prenom='.$donnees["prenom"].
+														// 	'&sexe='.$donnees["sexe"].
+														// 	'&mdp='.$donnees["password"].
+														// 	'&mail='.$donnees["mail_utilisateur"].
+														// 	'&id='.$donnees["id_utilisateur"]
+														?>"> -->
 														<i class="fas fa-edit"></i>
 													</a>
 												</td>

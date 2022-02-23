@@ -81,9 +81,6 @@ table.scrolldown tbody {
 tbody td, thead th {
   width : 15%;
 }
-td {
-  text-align:center;
-}
 .cardHeader .button
 {
   display: flex;
@@ -139,9 +136,6 @@ input[type="submit"]
 {
   .cardHeader h2 {
     font-size: 4rem;
-  }
-  tbody td, thead th {
-    width : 15%;
   }
 }
 

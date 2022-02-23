@@ -31,7 +31,7 @@
           echo '<meta http-equiv="refresh" content="0.5;URL=../../index?OperaPPE=menu">';
 
           // Récupération des donnés de l'user
-          $userInfo = $base_donnees->getUser($_POST['pseudo'])->fetch();
+          $userInfo = $base_donnees->getUser("pseudo", $_POST['pseudo'])->fetch();
 
           // Creation d'une session
           $base_donnees->newSession($userInfo);
@@ -48,7 +48,7 @@
       else if ($_POST['OperaPPE'] == 'password') {
         session_start();
         
-        $userInfo = $base_donnees->getUser($_SESSION['userInfo']['pseudo'])->fetch();
+        $userInfo = $base_donnees->getUser("pseudo", $_SESSION['userInfo']['pseudo'])->fetch();
         
 				if ($userInfo['password'] == $_POST['currentPassword']) {
 					if ($_POST['newPassword'] == $_POST['confirmPassword']) {

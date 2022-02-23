@@ -8,7 +8,7 @@ require '../../model/classes/ActionsDB.php';
 
 $conn_db = new ConnexionDB();
 $base_donnees = new ActionsDB($conn_db);
-$reponse = $base_donnees->getAllUsers();
+$reponse = $base_donnees->getAllCreneaux();
 ?>
 
 <html>
@@ -16,7 +16,7 @@ $reponse = $base_donnees->getAllUsers();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboad</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../../model/assets/css/tableScroll.css">
+    <link rel="stylesheet" type="text/css" href="../../css/creneaux.css">
   </head>
   
   <body onload="adminMenu(), creanauMenu('prof')">
@@ -32,18 +32,18 @@ $reponse = $base_donnees->getAllUsers();
 				<div class="recentOrders">
           <div class="cardHeader">
 
-						<h1>Affichage utilisateurs</h1>
-						<h2>Affichage utilisateurs</h2>
+						<h1>Affichage Creneau</h1>
+						<h2>Affichage Creneau</h2>
 
 						<table class="scrolldown">
 							<thead>
 									<tr>
-											<th>Pseudo</th>
-											<th>Nom</th>
-											<th>Prénom</th>
-											<th>Sexe</th>
-											<th>Mot de passe</th>
-											<th>Mail</th>
+											<th>Professeur</th>
+											<th>Classes</th>
+											<th>Matiere</th>
+											<th>Jour</th>
+											<th>Horaire</th>
+											<th>Salle</th>
 											<th>Supprimer</th>
 											<th>MAJ</th>
 									</tr>
@@ -53,27 +53,27 @@ $reponse = $base_donnees->getAllUsers();
 									while ($donnees = $reponse->fetch()) {
 										?>
 											<tr>
-												<td><?php echo $donnees["pseudo"] ?></td>
-												<td><?php echo $donnees["nom"] ?></td>
-												<td><?php echo $donnees["prenom"] ?></td>
-												<td><?php echo $donnees["sexe"] ?></td>
-												<td><?php echo $donnees["password"] ?></td>
-												<td><?php echo substr_replace($donnees["mail_utilisateur"] ,"",-18) ?></td>
+												<td><?php echo $base_donnees->getUser("id_utilisateur", $donnees["id_utilisateur"])->fetch()["pseudo"] ?></td>
+												<td><?php echo $donnees["libelle_classe"] ?></td>
+												<td><?php echo $base_donnees->getMatiere("id_matiere", $donnees["id_matiere"]) ->fetch()["libelle_matiere"] ?></td>
+												<td><?php echo $donnees["edt_jour"] ?></td>
+												<td><?php echo "$donnees[edt_heure_deb] - $donnees[edt_heure_fin]" ?></td>
+												<td><?php echo "$donnees[salle_de_classe]" ?></td>
 												<td align="center">
-													<a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&userID=<?php echo $donnees["id_utilisateur"] ?>">
+													<!-- <a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&userID=<?php echo $donnees["id_utilisateur"] ?>"> -->
 														<i class="fas fa-trash-alt"></i>
-													</a>
+													<!-- </a> -->
 												</td>
 												<td align="center">
-													<a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php
-														echo '&pseudo='.$donnees["pseudo"]. 
-															'&nom='.$donnees["nom"].
-															'&prenom='.$donnees["prenom"].
-															'&sexe='.$donnees["sexe"].
-															'&mdp='.$donnees["password"].
-															'&mail='.$donnees["mail_utilisateur"].
-															'&id='.$donnees["id_utilisateur"]
-														?>">
+													<!-- <a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php
+														// echo '&pseudo='.$donnees["pseudo"]. 
+														// 	'&nom='.$donnees["nom"].
+														// 	'&prenom='.$donnees["prenom"].
+														// 	'&sexe='.$donnees["sexe"].
+														// 	'&mdp='.$donnees["password"].
+														// 	'&mail='.$donnees["mail_utilisateur"].
+														// 	'&id='.$donnees["id_utilisateur"]
+														?>"> -->
 														<i class="fas fa-edit"></i>
 													</a>
 												</td>
