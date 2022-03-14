@@ -65,7 +65,7 @@ $reponse = $base_donnees->getAllUsers();
 													</a>
 												</td>
 												<td align="center">
-													<a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php
+													<a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=utilisateur<?php
 														echo '&pseudo='.$donnees["pseudo"]. 
 															'&nom='.$donnees["nom"].
 															'&prenom='.$donnees["prenom"].

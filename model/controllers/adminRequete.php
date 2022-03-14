@@ -20,14 +20,34 @@
 
       // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
-      if ($_POST['OperaPPE'] == 'users') {
+      echo "$_POST[enseignement] $_POST[classe] $_POST[nbr_eleve]";
+      if ($_POST['OperaPPE'] == 'utilisateur') {
         
         $conn_db->getDB()->query("UPDATE utilisateur SET nom = '".$_POST['nom']."', prenom = '".$_POST['prenom']."', sexe = '".$_POST['sexe']."', mail_utilisateur = '".$_POST['mail']."', password = '".$_POST['mdp']."' WHERE id_utilisateur = '".$_POST['userID']."'");
 
         ?>
         <script>
           alert("Utilisateur mis à jour avec succès");
-          window.location = "http://localhost/ProjetPPE/view/admin/users";
+          window.location = "http://localhost/ProjetPPE/view/admin/utilisateurs";
+        </script>
+      <?php
+      } else if ($_POST['OperaPPE'] == 'classe') {
+        if ($_POST['enseignement'] == "BTS") {
+          $ensignement = 3;
+
+        } else if ($_POST['enseignement'] == "LYCEE") {
+          $ensignement = 2;
+
+        } else {
+          $ensignement = 1;
+        }
+
+        $conn_db->getDB()->query("UPDATE classe SET id_enseignement = '".$ensignement."', libelle_classe = '".$_POST['classe']."', nbr_eleve = '".$_POST['nbr_eleve']."' WHERE libelle_classe = '".$_POST['oldData']."'");
+
+        ?>
+        <script>
+          alert("Classe mis à jour avec succès");
+          window.location = "http://localhost/ProjetPPE/view/admin/classes";
         </script>
       <?php
       }

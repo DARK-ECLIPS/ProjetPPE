@@ -36,13 +36,13 @@ $reponse = $base_donnees->getAllUsers();
             <?php
               if (isset($_GET['OperaPPE'])) {
                 if ($_GET['OperaPPE'] == "4441524b2045434e454c4953") {
-                  if (isset($_GET['operation']) && $_GET['operation'] == 'updateUser') {
+                  if (isset($_GET['operation']) && $_GET['operation'] == 'utilisateur') {
             ?>
                     <form method="post" action="http://localhost/ProjetPPE/model/controllers/adminRequete.php?OperaPPE=4441524b2045434e454c4953">
                       <h1>Modification d'utilisateur</h1>
 
                       <div class="content">
-                        <input type="hidden" name="OperaPPE" value="users">
+                        <input type="hidden" name="OperaPPE" value="utilisateur">
                         <input type="hidden" name="userID" value="<?php echo $_GET["id"] ?>">
 
                         <div class="row">
@@ -88,7 +88,7 @@ $reponse = $base_donnees->getAllUsers();
                       </div>
                       
                       <div class="button">
-                        <a href="http://localhost/ProjetPPE/view/admin/users"><input type="button" name="time" value='Annulé'></a>
+                        <a href="http://localhost/ProjetPPE/view/admin/utilisateurs"><input type="button" name="time" value='Annulé'></a>
                         <input type="submit" value="Valider">
                       </div>
 
@@ -97,6 +97,60 @@ $reponse = $base_donnees->getAllUsers();
                     
             <?php
                   }
+                  
+                  if (isset($_GET['operation']) && $_GET['operation'] == 'classe') {
+                    ?>
+                      <form method="post" action="http://localhost/ProjetPPE/model/controllers/adminRequete.php?OperaPPE=4441524b2045434e454c4953">
+                        <h1>Modification de la classe</h1>
+
+                        <div class="content">
+                          <input type="hidden" name="OperaPPE" value="classe">
+                          <input type="hidden" name="oldData" value="<?php echo $_GET["libelle_classe"] ?>">
+                          <input type="hidden" name="userID" value="<?php echo $_GET["id"] ?>">
+                                  
+                          <div class="row">
+                            <div class="checkbox">
+                              <div>
+                                <input type="radio" id="case1" name="enseignement" value="COLLEGE" onchange="matiereMenu('checkbox', this)" <?php if ($_GET["id_enseignement"] == 1) echo "checked" ?>>
+                                <label for="case1">Collège</label>
+                              </div>
+                              <div>
+                                <input type="radio" id="case2" name="enseignement" value="LYCEE" onchange="matiereMenu('checkbox', this)" <?php if ($_GET["id_enseignement"] == 2) echo "checked" ?>>
+                                <label for="case2">Lycée</label>
+                              </div>
+                              <div>
+                                <input type="radio" id="case3" name="enseignement" value="BTS" onchange="matiereMenu('checkbox', this)" <?php if ($_GET["id_enseignement"] == 3) echo "checked" ?>>
+                                <label for="case3">BTS</label>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="row">
+                            <div class="select">
+                              <label>Classe : </label>
+                              <input type='text' name='classe' value="<?php echo $_GET["libelle_classe"] ?>" required />
+                            </div>
+                          </div>
+  
+                          <div class="row">
+                            <div class="select">
+                              <label>Mot de passe : </label>
+                              <input type='number' name='nbr_eleve' value="<?php echo $_GET["nbr_eleve"] ?>" min="0" required />              
+                            </div>  
+                          </div>
+  
+                        </div>
+                        
+                        <div class="button">
+                          <a href="http://localhost/ProjetPPE/view/admin/classes"><input type="button" name="time" value='Annulé'></a>
+                          <input type="submit" value="Valider">
+                        </div>
+  
+                      </form>
+        
+                            
+                    <?php
+                          }
                 }
               }
             ?>

@@ -59,15 +59,11 @@ $reponse = $base_donnees->getAllClasses();
 													</a>
 												</td>
 												<td align="center">
-													<!-- <a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php
-														// echo '&pseudo='.$donnees["pseudo"]. 
-														// 	'&nom='.$donnees["nom"].
-														// 	'&prenom='.$donnees["prenom"].
-														// 	'&sexe='.$donnees["sexe"].
-														// 	'&mdp='.$donnees["password"].
-														// 	'&mail='.$donnees["mail_utilisateur"].
-														// 	'&id='.$donnees["id_utilisateur"]
-														?>"> -->
+													<a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=classe<?php
+														echo '&id_enseignement='.$donnees["id_enseignement"]. 
+															'&libelle_classe='.$donnees["libelle_classe"].
+															'&nbr_eleve='.$donnees["nbr_eleve"]
+														?>">
 														<i class="fas fa-edit"></i>
 													</a>
 												</td>
