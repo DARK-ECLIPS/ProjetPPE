@@ -1,7 +1,7 @@
 <?php
 	/**
 	* Classe Users.
-	  Elle pourrait accueillir un registre/tuple/ligne  de la table Users
+	  Elle pourrait accueillir un registre/tuple/ligne de la table Users
 	*/
 	class Users
 	{

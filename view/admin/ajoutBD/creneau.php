@@ -23,8 +23,7 @@ include_once('../../../model/controllers/CheckUp.php');
         
 				<div class="recentOrders">
           <div class="cardHeader">
-          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953">
-					<input type="hidden" name="OperaPPE" value="creneau">
+          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&Add=creneau">
 
 						<h2>Ajout Crénaux</h2>
 

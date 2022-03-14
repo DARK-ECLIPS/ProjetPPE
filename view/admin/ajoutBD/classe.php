@@ -23,9 +23,10 @@ include_once('../../../model/controllers/CheckUp.php');
         
 				<div class="recentOrders">
           <div class="cardHeader">
-          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&Add=matiere">
+          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&Add=classe">
+					<input type="hidden" name="OperaPPE" value="classe">
 
-						<h2>Ajout Matiere</h2>
+						<h2>Ajout Classe</h2>
 
 						<div class="content">
 
@@ -49,23 +50,21 @@ include_once('../../../model/controllers/CheckUp.php');
 							<div class="row">
 								<div class="select">
 									<label>Classe :</label>
-									<select id="classe" name="classe[]" required>
-										<option value="">Selectionner une classe</option>
-									</select>
+									<input type="text" placeholder=" Nom de la Classe" name="classe" required>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="select">
-									<label>Matière :</label>
-									<input type="text" placeholder=" Nom du Cours" name="matiere" required>
+									<label>Elève :</label>
+									<input type="number" placeholder=" Nombre d'élève" name="eleve" min="0" required>
 								</div>
 							</div>
 							
 						</div>
 					
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/admin/matieres""><input type="button" name="time" value='Annulé'></a>
+							<a href="http://localhost/ProjetPPE/view/admin/classes""><input type="button" name="time" value='Annulé'></a>
 							<input type="submit" value="Valider">
 						</div>
 

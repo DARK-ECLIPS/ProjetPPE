@@ -87,7 +87,7 @@ $reponse = $base_donnees->getAllCreneaux();
 					
 					<div class="button">
 						<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
-						<a href="http://localhost/ProjetPPE/view/admin/usersAdd"><input type="submit" value="Ajouter"></a>
+						<a href="http://localhost/ProjetPPE/view/admin/ajoutBD/creneau"><input type="submit" value="Ajouter"></a>
 					</div>
 
 					</div>

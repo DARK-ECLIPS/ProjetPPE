@@ -22,7 +22,7 @@ include_once('../../model/controllers/CheckUp.php');
       <div class="cardBox">
 
         <span class="status add">
-          <a href="./users">
+          <a href="./utilisateurs">
             <div class="card">
               <div>
                 <div class="name">Utilisateurs</div>
@@ -72,7 +72,7 @@ include_once('../../model/controllers/CheckUp.php');
         </span>
 
         <span class="status edit">
-          <a href="./ajoutBD/user">
+          <a href="./ajoutBD/utilisateur">
             <div class="card">
               <div>
                 <div class="name">Ajout Utilisateur</div>
@@ -108,15 +108,17 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <div class="card">
-            <div>
-              <div class="name">???????????</div>
-              <div class="cardName">???????????</div>
+          <a href="./ajoutBD/classe">
+            <div class="card">
+              <div>
+                <div class="name">Ajout Classe</div>
+                <div class="cardName">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+              </div>
+              <div class="iconBox">
+                <i class="fas fa-tasks"></i>
+              </div>
             </div>
-            <div class="iconBox">
-              <i class="fas fa-tasks"></i>
-            </div>
-          </div>
+          </a>
         </span>
 
         <span class="status delete">

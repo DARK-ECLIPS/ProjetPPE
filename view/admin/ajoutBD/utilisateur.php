@@ -23,8 +23,7 @@ include_once('../../../model/controllers/CheckUp.php');
         
 				<div class="recentOrders">
           <div class="cardHeader">
-          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953">
-					<input type="hidden" name="OperaPPE" value="creneau">
+          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&Add=utilisateur">
 
 						<h2>Ajout Utilisateur</h2>
 
@@ -50,7 +49,7 @@ include_once('../../../model/controllers/CheckUp.php');
 							<div class="row">
 								<div class="select">
 									<label>N° Sécurité Sociale :</label>
-                  <input type='text' name='secue  ' required>
+                  <input type='text' name='secue' required>
 								</div>
 							</div>
 
@@ -82,7 +81,7 @@ include_once('../../../model/controllers/CheckUp.php');
 							<div class="row">
 								<div class="select" required>
                 <label>N° Téléphone:</label>
-                <input type="tel" id="phone" name="phone" placeholder="0690-453-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
+                <input type="tel" name="phone" placeholder="0690-453-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
 								</div>
                 <small>Format: 0690-123-456</small>
 							</div>
@@ -90,21 +89,20 @@ include_once('../../../model/controllers/CheckUp.php');
 							<div class="row">
 								<div class="select">
 									<label>Email :</label>
-                  <input type="email" id="email" pattern=".+@globex\.com" required>
+                  <input type="email" name="email" pattern=".+@gmail\.com" required>
                 </div>
 							</div>
 							
 							<div class="row">
 								<div class="select">
 									<label>Password :</label>
-                  <input type="password" id="password" required>
+                  <input type="password" name="password" required>
                 </div>
 							</div>
 						</div>
 
-
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/admin/users"><input type="button" name="time" value='Annulé'></a>
+							<a href="http://localhost/ProjetPPE/view/admin/utilisateurs"><input type="button" name="time" value='Annulé'></a>
 							<input type="submit" value="Valider">
 						</div>
 

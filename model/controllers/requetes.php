@@ -3,6 +3,9 @@
 	// "Importer" les classes utilisées
 
   include '../classes/Users.php';
+  include '../classes/Matieres.php';
+  include '../classes/Classes.php';
+  include '../classes/Creneaux.php';
   require '../classes/ConnexionDB.php';
   require '../classes/ActionsDB.php';
 
@@ -17,8 +20,8 @@
 	*/
   if (isset($_GET['OperaPPE'])) {
     if ($_GET['OperaPPE'] == '4441524b2045434e454c4953') {
-
-      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+      
+      ############################################################ Connexion  ############################################################
 
       if ($_POST['OperaPPE'] == 'login') {
 
@@ -43,7 +46,7 @@
         }
       }
 
-      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+      ############################################################ BDD UTILISATEUR  ############################################################
 
       else if ($_POST['OperaPPE'] == 'password') {
         session_start();
@@ -88,95 +91,149 @@
         }
       }
       
-      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+      ############################################################ Ajout BDD ADMIN  ############################################################
+      
+      else if (isset($_GET['Add'])) {
 
-      // Requete de la vue Creneau
-      else if ($_POST['OperaPPE'] == 'creneau') {
+        if ($_GET['Add'] == 'classe') {
 
-        // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
-        // Par la suite on récupère dans la BDD les infos qu'il nous manque
+          $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+          $schoolID = $school['id_enseignement'];
 
-        // On récupère les le pseudo du professeur puis on fait une requete pour récupérer l'id du professeur ayant un pseudo similaire
-        foreach ($_POST['prof'] as $select) {
-          $prof = $conn_db->getDB()->query("SELECT `id_utilisateur` from utilisateur where concat(pseudo =  '".$select."')")->fetch();
-          $profID = $prof['id_utilisateur'];
-        };
+          // On ajoute la classe dans la BDD
+          $conn_db->getDB()->query("INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('".$schoolID."', '".$_POST['classe']."', '".$_POST['eleve']."')");
+          
+          echo "<script>alert('La classe $_POST[classe] à été ajouter avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
 
-        $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
-        $schoolID = $school['id_enseignement'];
+        }
 
-        foreach ($_POST['classe'] as $select) {
-          $classe = $select;
-        };
+        // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-        foreach ($_POST['matiere'] as $select) {
-          $matiere = $select; 
-        };
+        // Requete de la vue Creneau
+        else if ($_GET['Add'] == 'creneau') {
 
-        $matiere = $conn_db->getDB()->query("SELECT `id_matiere` from matiere where libelle_matiere = '".$matiere."' AND libelle_classe = '".$classe."'")->fetch();
-        $matiereID = $matiere['id_matiere'];
+          // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
+          // Par la suite on récupère dans la BDD les infos qu'il nous manque
 
-        foreach ($_POST['salle'] as $select) {
-          $room = $select;
-        };
-        foreach ($_POST['jour'] as $select) {
-          $days = $select;
-        };
-        foreach ($_POST['heureD'] as $select) {
-          $startH = $select;
-        };
-        foreach ($_POST['heureF'] as $select) {
-          $endH = $select;
-        };
+          // On récupère les le pseudo du professeur puis on fait une requete pour récupérer l'id du professeur ayant un pseudo similaire
+          foreach ($_POST['prof'] as $select) {
+            $prof = $conn_db->getDB()->query("SELECT `id_utilisateur` from utilisateur where concat(pseudo =  '".$select."')")->fetch();
+            $profID = $prof['id_utilisateur'];
+          };
 
-        // On ajoute le creneau dans la BDD
-        $conn_db->getDB()->query("INSERT INTO creneau (id_utilisateur, id_enseignement, libelle_classe, id_matiere, edt_jour, edt_heure_deb, edt_heure_fin, salle_de_classe) VALUES ('".$profID."', '".$schoolID."', '".$classe."', '".$matiereID."', '".$days."', '".$startH."', '".$endH."', '".$room."')");
+          $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+          $schoolID = $school['id_enseignement'];
 
+          foreach ($_POST['classe'] as $select) {
+            $classe = $select;
+          };
+
+          foreach ($_POST['matiere'] as $select) {
+            $matiere = $select; 
+          };
+
+          $matiere = $conn_db->getDB()->query("SELECT `id_matiere` from matiere where libelle_matiere = '".$matiere."' AND libelle_classe = '".$classe."'")->fetch();
+          $matiereID = $matiere['id_matiere'];
+
+          foreach ($_POST['salle'] as $select) {
+            $room = $select;
+          };
+          foreach ($_POST['jour'] as $select) {
+            $days = $select;
+          };
+          foreach ($_POST['heureD'] as $select) {
+            $startH = $select;
+          };
+          foreach ($_POST['heureF'] as $select) {
+            $endH = $select;
+          };
+
+          // On ajoute le creneau dans la BDD
+          $conn_db->getDB()->query("INSERT INTO creneau (id_utilisateur, id_enseignement, libelle_classe, id_matiere, edt_jour, edt_heure_deb, edt_heure_fin, salle_de_classe) VALUES ('".$profID."', '".$schoolID."', '".$classe."', '".$matiereID."', '".$days."', '".$startH."', '".$endH."', '".$room."')");
+
+          ?>
+            <script>
+              alert("Creneau Ajouter avec succès");
+              window.location = "http://localhost/ProjetPPE/view/admin/adminMenu";
+            </script>
+          <?php
+        }
+
+        // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+        // Requete de la vue Matiere
+        else if ($_GET['Add'] == 'matiere') {
+
+          // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
+          // Par la suite on récupère dans la BDD les infos qu'il nous manque
+
+          $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+          $schoolID = $school['id_enseignement'];
+
+          foreach ($_POST['classe'] as $select) {
+            $classe = $select;
+          };
+
+          // On ajoute le creneau dans la BDD
+          $conn_db->getDB()->query("INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('".$_POST['matiere']."', '".$schoolID."', '".$classe."')");
+          
+          echo "<script>alert('La Matiere $_POST[matiere] à été ajouter à la classe $classe avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
+        }
+
+        // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+        
+        if ($_GET['Add'] == 'utilisateur') {
+          // enseignement: PROF
+          
+          foreach ($_POST['sexe'] as $select) {
+            $sexe = $select;
+          };
+          $pseudo = "$_POST[nom].{$_POST['prenom'][0]}";
+          
+          $conn_db->getDB()->query("INSERT INTO utilisateur (id_utilisateur, nom, prenom, sexe, tel_cel, pseudo, mail_utilisateur, password) VALUES ('".$_POST['secue']."', '".$_POST['nom']."', '".$_POST['prenom']."', '".$sexe."', '".str_replace("-","",$_POST['phone'])."', '".$pseudo."', '".$_POST['email']."', '".$_POST['password']."')");
+
+          echo "<script>alert('L\'utilisateur $pseudo à été ajouter avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
+        }
+      }
+
+      ############################################################ Suppression BDD ADMIN  ############################################################ 
+
+      elseif ($_GET['operation'] == 'deleteTab') {
+        
+        // Création d'un objet selon le numéro reçus. La seule information qu'on valorise est l'id ou plus
+        switch ($_GET['tab']) {
+          case 0:
+            $tab = "utilisateur";
+            $url = "{$tab}s";
+            $id = new Users($_GET['tabID'], "", "", "", "", "", "", "");
+            break;
+          case 1:
+            $tab = "matiere";
+            $url = "{$tab}s";
+            $id = new Matieres($_GET['tabID'], "", "", "");
+            break;
+          case 2:
+            $tab = "creneau";
+            $url = "{$tab}x";
+            $id = new Creneaux($_GET['tabID'], "", "", "", "", "", "");
+            break;
+          case 3:
+            $tab = "classe";
+            $url = "{$tab}s";
+            $id = new Classes($_GET['tabID'], "", $_GET['more']);
+            break;
+        }
+        
+        // Supprimer la valeur de la BDD
+        $base_donnees->deleteSpecial($tab, $id);
         ?>
-          <script>
-            alert("Creneau Ajouter avec succès");
-            window.location = "http://localhost/ProjetPPE/view/admin/adminMenu";
-          </script>
+        <!-- Redirection sur la page de la requete "objetName.php" -->
+        <meta http-equiv="refresh" content="0;URL=http://localhost/ProjetPPE/view/admin/<?php echo $url; ?>">
+
         <?php
       }
-
-      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
-
-      // Requete de la vue Matiere
-      else if ($_POST['OperaPPE'] == 'matiere') {
-
-        // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
-        // Par la suite on récupère dans la BDD les infos qu'il nous manque
-
-        $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
-        $schoolID = $school['id_enseignement'];
-
-        foreach ($_POST['classe'] as $select) {
-          $classe = $select;
-        };
-
-        // On ajoute le creneau dans la BDD
-        $conn_db->getDB()->query("INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('".$_POST['matiere']."', '".$schoolID."', '".$classe."')");
-        
-        echo "<script>alert('La Matiere $_POST[matiere] à été ajouter à la classe $classe avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
-      }
-
-      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
-
-      elseif ($_GET['operation'] == 'deleteUser') {
-        
-        // Création d'un objet "Users" La seule information qu'on valorise est le pseudo et le mot passe
-
-        $user = new Users($_GET['userID'], "", "", "", "", "", "", "");
-
-        // Supprimer le users
-        $base_donnees->delete($user);
-
-        // Redirection sur la page "users.php"
-        echo '<meta http-equiv="refresh" content="0;URL=http://localhost/ProjetPPE/view/admin/users">';
-      }
       
-      // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+      ############################################################ Déconnexion  ############################################################ 
 
     } else if ($_GET['OperaPPE'] == 'logout') {
 

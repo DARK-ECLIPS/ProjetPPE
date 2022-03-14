@@ -40,8 +40,8 @@ $reponse = $base_donnees->getAllmatieres();
 											<th>Enseignement</th>
 											<th>Classe</th>
 											<th>Matière</th>
-											<th>MAJ</th>
 											<th>Supprimer</th>
+											<th>MAJ</th>
 									</tr>
 							</thead>
 							<tbody>
@@ -61,6 +61,11 @@ $reponse = $base_donnees->getAllmatieres();
 													<td><?php echo $donnees["libelle_classe"] ?></td>
 													<td><?php echo $donnees["libelle_matiere"] ?></td>
 													<td align="center">
+														<a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteTab&tabID=<?php echo $donnees["id_matiere"] ?>&tab=1">
+															<i class="fas fa-trash-alt"></i>
+														</a>
+													</td>
+													<td align="center">
 														<!-- <a href="./updateData.php?OperaPPE=4441524b2045434e454c4953&operation=updateUser<?php 
 																// echo '&pseudo='.$donnees["pseudo"]. 
 																// 	'&nom='.$donnees["nom"].
@@ -73,11 +78,6 @@ $reponse = $base_donnees->getAllmatieres();
 																--> <i class="fas fa-edit"></i> <!--
 															</a> -->
 													</td>
-													<td align="center">
-														<a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&matiereID=<?php echo $donnees["id_matiere"] ?>">
-															<i class="fas fa-trash-alt"></i>
-														</a>
-													</td>
 											</tr>
 							<?php } ?>
 							</tbody>
@@ -87,7 +87,7 @@ $reponse = $base_donnees->getAllmatieres();
 					
 						<div class="button">
 							<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
-							<a href="http://localhost/ProjetPPE/view/admin/matiereAdd"><input type="submit" value="Ajouter"></a>
+							<a href="http://localhost/ProjetPPE/view/admin/ajoutBD/matiere"><input type="submit" value="Ajouter"></a>
 						</div>
 
 					</div>

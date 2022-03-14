@@ -91,8 +91,6 @@
 			return $this->conn_db->getDB()->query($requete);
     }
 
-
-
     public function getMatter($id)
     {
 			$requete = "SELECT count(*) as quantite FROM professeur WHERE id_utilisateur = '$id'";
@@ -118,6 +116,54 @@
 			}
 			else return "Professeur";
     }
+
+		// // // // // // // // // // // // // // // // DELETE FUNCTION // // // // // // // // // // // // // // // // 
+
+		public function delete($user)
+		{
+			$requete = "delete from utilisateur
+						where id_utilisateur = :userID";
+
+			$reponse = $this->conn_db->getDB()->prepare($requete);
+
+			$reponse->execute(array('userID' => $user->getId()));
+		}
+
+		public function deleteSpecial($table, $champ)
+		{
+			$moreColumn = "";
+			switch ($table) {
+				case "utilisateur":
+					$column = "id_utilisateur";
+					break;
+					case "creneau":
+						$column = "id_utilisateur";
+						break;
+				case "classe":
+					$column = "id_enseignement";
+					if ($champ->getNbr_eleve() !== "" or $champ->getNbr_eleve() !== null) {
+						$moreColumn = "AND nbr_eleve = :eleve";
+					};
+					break;
+				case "matiere":
+					$column = "id_matiere";
+					break;
+			}
+
+			$requete = "delete from $table
+						where $column = :tabID $moreColumn";
+
+			$reponse = $this->conn_db->getDB()->prepare($requete);
+			echo $moreChamp;
+			if ($table !== "classe") {
+				$reponse->execute(array('tabID' => $champ->getId()));
+			} else {
+				$reponse->execute(array('tabID' => $champ->getId(), 'eleve' => $champ->getNbr_eleve()));
+			}
+		}
+
+
+
 
 		public function newSession($userInfo)
 		{
@@ -173,15 +219,6 @@
 		// 							'password' => $user->getpassword()));
 		// }
 
-		public function delete($user)
-		{
-			$requete = "delete from utilisateur
-						where id_utilisateur = :userID";
-
-			$reponse = $this->conn_db->getDB()->prepare($requete);
-
-			$reponse->execute(array('userID' => $user->getId()));
-		}
 
 		public function update($pseudo, $user)
 		{
