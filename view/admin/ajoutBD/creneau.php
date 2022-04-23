@@ -105,11 +105,11 @@ include_once('../../../model/controllers/CheckUp.php');
 								<div class="select" required>
 									<label>Jour :</label>
 									<select id="jour" name="jour[]">
-										<option id="1" value="Lundi">Lundi</option>
-										<option id="2" value="Mardi">Mardi</option>
-										<option id="3" value="Mercredi">Mercredi</option>
-										<option id="4" value="Jeudi">Jeudi</option>
-										<option id="5" value="Vendredi">Vendredi</option>
+										<option id="1" value="LUNDI">Lundi</option>
+										<option id="2" value="MARDI">Mardi</option>
+										<option id="3" value="MERCREDI">Mercredi</option>
+										<option id="4" value="JEUDI">Jeudi</option>
+										<option id="5" value="VENDREDI">Vendredi</option>
 									</select>
 								</div>
 							</div>

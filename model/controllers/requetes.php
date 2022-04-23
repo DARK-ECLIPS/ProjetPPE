@@ -97,7 +97,7 @@
 
         if ($_GET['Add'] == 'classe') {
 
-          $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+          $school = $conn_db->getDB()->query("SELECT id_enseignement from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
           $schoolID = $school['id_enseignement'];
 
           // On ajoute la classe dans la BDD
@@ -117,11 +117,11 @@
 
           // On récupère les le pseudo du professeur puis on fait une requete pour récupérer l'id du professeur ayant un pseudo similaire
           foreach ($_POST['prof'] as $select) {
-            $prof = $conn_db->getDB()->query("SELECT `id_utilisateur` from utilisateur where concat(pseudo =  '".$select."')")->fetch();
+            $prof = $conn_db->getDB()->query("SELECT id_utilisateur from utilisateur where pseudo =  '".$select."' ")->fetch();
             $profID = $prof['id_utilisateur'];
           };
 
-          $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+          $school = $conn_db->getDB()->query("SELECT id_enseignement from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
           $schoolID = $school['id_enseignement'];
 
           foreach ($_POST['classe'] as $select) {
@@ -132,11 +132,11 @@
             $matiere = $select; 
           };
 
-          $matiere = $conn_db->getDB()->query("SELECT `id_matiere` from matiere where libelle_matiere = '".$matiere."' AND libelle_classe = '".$classe."'")->fetch();
+          $matiere = $conn_db->getDB()->query("SELECT id_matiere from matiere where libelle_matiere = '".$matiere."' AND libelle_classe = '".$classe."'")->fetch();
           $matiereID = $matiere['id_matiere'];
 
           foreach ($_POST['salle'] as $select) {
-            $room = $select;
+            $room = "Salle $select";
           };
           foreach ($_POST['jour'] as $select) {
             $days = $select;
@@ -167,7 +167,7 @@
           // On defini de nouvelle valuer au infos reçus du form | On est obligerde faire des boucle pour récupérer les éléments reçus des select
           // Par la suite on récupère dans la BDD les infos qu'il nous manque
 
-          $school = $conn_db->getDB()->query("SELECT `id_enseignement` from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
+          $school = $conn_db->getDB()->query("SELECT id_enseignement from enseignement where type_classe = '".$_POST['enseignement']."'")->fetch();
           $schoolID = $school['id_enseignement'];
 
           foreach ($_POST['classe'] as $select) {

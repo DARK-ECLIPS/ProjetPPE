@@ -96,7 +96,7 @@
 			$requete = "SELECT count(*) as quantite FROM professeur WHERE id_utilisateur = '$id'";
 			$reponse = $this->conn_db->getDB()->prepare($requete);
 
-			$reponse->bindValue('id_utilisateur', $id, PDO::PARAM_STR);
+			// $reponse->bindValue('id_utilisateur', $id, PDO::PARAM_STR);
 			$reponse->execute();
 
 			$donnees = $reponse->fetch(PDO::FETCH_OBJ);
@@ -106,7 +106,7 @@
 			if (!$result) {
 				$requete2 = "SELECT count(*) as quantite FROM receptionniste WHERE id_utilisateur = '$id'";
 				$reponse2 = $this->conn_db->getDB()->prepare($requete2);
-				$reponse2->bindValue('id_utilisateur', $id, PDO::PARAM_STR);
+				// $reponse2->bindValue('id_utilisateur', $id, PDO::PARAM_STR);
 				$reponse2->execute();
 				$donnees2 = $reponse2->fetch(PDO::FETCH_OBJ);
 				$result2 = ($donnees2->quantite != 0) ? true : false;
@@ -121,8 +121,7 @@
 
 		public function delete($user)
 		{
-			$requete = "delete from utilisateur
-						where id_utilisateur = :userID";
+			$requete = "DELETE FROM utilisateur WHERE id_utilisateur = :userID";
 
 			$reponse = $this->conn_db->getDB()->prepare($requete);
 
@@ -135,6 +134,7 @@
 			switch ($table) {
 				case "utilisateur":
 					$column = "id_utilisateur";
+					$auth = user;
 					break;
 					case "creneau":
 						$column = "id_utilisateur";
@@ -147,14 +147,37 @@
 					break;
 				case "matiere":
 					$column = "id_matiere";
+					$auth = matiere;
 					break;
-			}
+			};
 
-			$requete = "delete from $table
-						where $column = :tabID $moreColumn";
+			switch ($auth) {
+				case "user":
+					$authUser = $this->conn_db->getDB()->prepare("DELETE FROM autorisation WHERE id_utilisateur = :tabID");
+					
+					$profUser = $this->conn_db->getDB()->prepare("DELETE FROM professeur WHERE id_utilisateur = :tabID");
+					
+					$crenUser = $this->conn_db->getDB()->prepare("DELETE FROM creneau WHERE id_utilisateur = :tabID");
+
+					$reserUser = $this->conn_db->getDB()->prepare("DELETE FROM reservation WHERE id_professeur = :tabID");
+
+					$authUser->execute(array('tabID' => $champ->getId()));
+					$reserUser->execute(array('tabID' => $champ->getId()));
+					$crenUser->execute(array('tabID' => $champ->getId()));
+					$profUser->execute(array('tabID' => $champ->getId()));
+					break;
+				case "matiere":
+
+					$crenUser = $this->conn_db->getDB()->prepare("DELETE FROM creneau WHERE id_matiere = :tabID");
+
+					$crenUser->execute(array('tabID' => $champ->getId()));
+					break;
+			};
+
+
+			$requete = "DELETE FROM $table WHERE $column = :tabID $moreColumn";
 
 			$reponse = $this->conn_db->getDB()->prepare($requete);
-			echo $moreChamp;
 			if ($table !== "classe") {
 				$reponse->execute(array('tabID' => $champ->getId()));
 			} else {
