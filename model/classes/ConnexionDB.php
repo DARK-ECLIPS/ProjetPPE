@@ -14,12 +14,16 @@
 
     public function __construct()
     {
-      $this->sgdbr = 'mysql';
+      // $this->sgdbr = 'pgsql';
+			// $this->host = '172.16.130.27';
+			// $this->dbname = 'ppe';
+			// $this->utilisateur = 'wilfrid';
+			// $this->password = 'training';
+			$this->sgdbr = 'mysql';
 			$this->host = 'localhost';
 			$this->dbname = 'projetppe';
 			$this->utilisateur = 'root';
 			$this->password = '';
-
 			try
 			{
 				$this->db = new PDO("{$this->getSGDBR()}:host={$this->getHost()};
