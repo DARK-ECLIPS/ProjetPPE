@@ -60,7 +60,7 @@ $reponse = $base_donnees->getAllUsers();
 												<td><?php echo $donnees["password"] ?></td>
 												<td><?php echo substr_replace($donnees["mail_utilisateur"] ,"",-18) ?></td>
 												<td align="center">
-													<a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteTab&tabID=<?php echo $donnees["id_utilisateur"] ?>&tab=0">
+													<a href="http://192.168.1.72/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteTab&tabID=<?php echo $donnees["id_utilisateur"] ?>&tab=0">
 														<i class="fas fa-trash-alt"></i>
 													</a>
 												</td>
@@ -85,8 +85,8 @@ $reponse = $base_donnees->getAllUsers();
 
 					
 					<div class="button">
-						<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
-						<a href="http://localhost/ProjetPPE/view/admin/ajoutBD/utilisateur"><input type="submit" value="Ajouter"></a>
+						<a href="http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php"><input type="button" value='Retour'></a>
+						<a href="http://192.168.1.72/ProjetPPE/view/admin/ajoutBD/utilisateur.php"><input type="submit" value="Ajouter"></a>
 					</div>
 
 					</div>

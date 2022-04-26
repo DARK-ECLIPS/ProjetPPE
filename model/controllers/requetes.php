@@ -31,7 +31,7 @@
         if ($base_donnees -> existe($user)) {
           echo "Connexion en cours....";
           // Redirection sur la page "index.php"
-          echo '<meta http-equiv="refresh" content="0.5;URL=../../index?OperaPPE=menu">';
+          echo '<meta http-equiv="refresh" content="0.5;URL=../../index.php?OperaPPE=menu">';
 
           // Récupération des donnés de l'user
           $userInfo = $base_donnees->getUser("pseudo", $_POST['pseudo'])->fetch();
@@ -42,7 +42,7 @@
         } else {
           echo "Information de connexion erronée (Identifiant / Mot de passe)";
           // Redirection sur la page "index.php"
-          echo '<meta http-equiv="refresh" content="2;URL=../../view/login">';
+          echo '<meta http-equiv="refresh" content="2;URL=../../view/login.php">';
         }
       }
 
@@ -62,14 +62,14 @@
               ?>
               <script>
                 alert("Mot de passe mis à jour avec succès");
-                window.location = "http://localhost/ProjetPPE/view/userProfile/profile";
+                window.location = "http://192.168.1.72/ProjetPPE/view/userProfile/profile.php";
               </script>
             <?php
             } else {
               ?>
                 <script>
                   alert("Le nouveau mot de passe ne doit pas être le même que l'ancien");
-                  window.location = "http://localhost/ProjetPPE/view/userProfile/password";
+                  window.location = "http://192.168.1.72/ProjetPPE/view/userProfile/password.php";
                 </script>
               <?php
             }
@@ -77,7 +77,7 @@
             ?>
               <script>
                 alert("La confirmation du passe n'est identique au nouveau mot de passe");
-                window.location = "http://localhost/ProjetPPE/view/userProfile/password";
+                window.location = "http://192.168.1.72/ProjetPPE/view/userProfile/password.php";
               </script>
             <?php
           }
@@ -85,7 +85,7 @@
           ?>
             <script>
               alert("Mot de Passe Incorrect");
-              window.location = "http://localhost/ProjetPPE/view/userProfile/password";
+              window.location = "http://192.168.1.72/ProjetPPE/view/userProfile/password.php";
             </script>
           <?php
         }
@@ -103,7 +103,7 @@
           // On ajoute la classe dans la BDD
           $conn_db->getDB()->query("INSERT INTO classe (id_enseignement, libelle_classe, nbr_eleve) VALUES ('".$schoolID."', '".$_POST['classe']."', '".$_POST['eleve']."')");
           
-          echo "<script>alert('La classe $_POST[classe] à été ajouter avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
+          echo "<script>alert('La classe $_POST[classe] à été ajouter avec succès'); window.location = 'http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php';</script>";
 
         }
 
@@ -154,7 +154,7 @@
           ?>
             <script>
               alert("Creneau Ajouter avec succès");
-              window.location = "http://localhost/ProjetPPE/view/admin/adminMenu";
+              window.location = "http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php";
             </script>
           <?php
         }
@@ -177,7 +177,7 @@
           // On ajoute le creneau dans la BDD
           $conn_db->getDB()->query("INSERT INTO matiere (libelle_matiere, id_enseignement, libelle_classe) VALUES ('".$_POST['matiere']."', '".$schoolID."', '".$classe."')");
           
-          echo "<script>alert('La Matiere $_POST[matiere] à été ajouter à la classe $classe avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
+          echo "<script>alert('La Matiere $_POST[matiere] à été ajouter à la classe $classe avec succès'); window.location = 'http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php';</script>";
         }
 
         // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
@@ -192,7 +192,7 @@
           
           $conn_db->getDB()->query("INSERT INTO utilisateur (id_utilisateur, nom, prenom, sexe, tel_cel, pseudo, mail_utilisateur, password) VALUES ('".$_POST['secue']."', '".$_POST['nom']."', '".$_POST['prenom']."', '".$sexe."', '".str_replace("-","",$_POST['phone'])."', '".$pseudo."', '".$_POST['email']."', '".$_POST['password']."')");
 
-          echo "<script>alert('L\'utilisateur $pseudo à été ajouter avec succès'); window.location = 'http://localhost/ProjetPPE/view/admin/adminMenu';</script>";
+          echo "<script>alert('L\'utilisateur $pseudo à été ajouter avec succès'); window.location = 'http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php';</script>";
         }
       }
 
@@ -228,7 +228,7 @@
         $base_donnees->deleteSpecial($tab, $id);
         ?>
         <!-- Redirection sur la page de la requete "objetName.php" -->
-        <meta http-equiv="refresh" content="0;URL=http://localhost/ProjetPPE/view/admin/<?php echo $url; ?>">
+        <meta http-equiv="refresh" content="0;URL=http://192.168.1.72/ProjetPPE/view/admin/<?php echo $url; ?>.php">
 
         <?php
       }
@@ -258,7 +258,7 @@
       
       // Finalement, on détruit la session.
       session_destroy();
-      echo '<meta http-equiv="refresh" content="0.5;URL=../../view/login">';
+      echo '<meta http-equiv="refresh" content="0.5;URL=../../view/login.php">';
 
     }
   }

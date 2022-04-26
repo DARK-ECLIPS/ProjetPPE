@@ -20,7 +20,7 @@
 			// $this->utilisateur = 'wilfrid';
 			// $this->password = 'training';
 			$this->sgdbr = 'mysql';
-			$this->host = 'localhost';
+			$this->host = '192.168.1.72';
 			$this->dbname = 'projetppe';
 			$this->utilisateur = 'root';
 			$this->password = '';

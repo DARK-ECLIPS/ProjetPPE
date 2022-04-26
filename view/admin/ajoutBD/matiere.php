@@ -23,7 +23,7 @@ include_once('../../../model/controllers/CheckUp.php');
         
 				<div class="recentOrders">
           <div class="cardHeader">
-          <form method="post" action="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&Add=matiere">
+          <form method="post" action="http://192.168.1.72/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&Add=matiere">
 
 						<h2>Ajout Matiere</h2>
 
@@ -65,7 +65,7 @@ include_once('../../../model/controllers/CheckUp.php');
 						</div>
 					
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/admin/matieres""><input type="button" name="time" value='Annulé'></a>
+							<a href="http://192.168.1.72/ProjetPPE/view/admin/matieres.php""><input type="button" name="time" value='Annulé'></a>
 							<input type="submit" value="Valider">
 						</div>
 

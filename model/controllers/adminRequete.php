@@ -28,7 +28,7 @@
         ?>
         <script>
           alert("Utilisateur mis à jour avec succès");
-          window.location = "http://localhost/ProjetPPE/view/admin/utilisateurs";
+          window.location = "http://192.168.1.72/ProjetPPE/view/admin/utilisateurs.php";
         </script>
       <?php
       } else if ($_POST['OperaPPE'] == 'classe') {
@@ -47,7 +47,7 @@
         ?>
         <script>
           alert("Classe mis à jour avec succès");
-          window.location = "http://localhost/ProjetPPE/view/admin/classes";
+          window.location = "http://192.168.1.72/ProjetPPE/view/admin/classes.php";
         </script>
       <?php
       }

@@ -38,7 +38,7 @@ $reponse = $base_donnees->getAllUsers();
                 if ($_GET['OperaPPE'] == "4441524b2045434e454c4953") {
                   if (isset($_GET['operation']) && $_GET['operation'] == 'utilisateur') {
             ?>
-                    <form method="post" action="http://localhost/ProjetPPE/model/controllers/adminRequete.php?OperaPPE=4441524b2045434e454c4953">
+                    <form method="post" action="http://192.168.1.72/ProjetPPE/model/controllers/adminRequete.php?OperaPPE=4441524b2045434e454c4953">
                       <h1>Modification d'utilisateur</h1>
 
                       <div class="content">
@@ -88,7 +88,7 @@ $reponse = $base_donnees->getAllUsers();
                       </div>
                       
                       <div class="button">
-                        <a href="http://localhost/ProjetPPE/view/admin/utilisateurs"><input type="button" name="time" value='Annulé'></a>
+                        <a href="http://192.168.1.72/ProjetPPE/view/admin/utilisateurs.php"><input type="button" name="time" value='Annulé'></a>
                         <input type="submit" value="Valider">
                       </div>
 
@@ -100,7 +100,7 @@ $reponse = $base_donnees->getAllUsers();
                   
                   if (isset($_GET['operation']) && $_GET['operation'] == 'classe') {
                     ?>
-                      <form method="post" action="http://localhost/ProjetPPE/model/controllers/adminRequete.php?OperaPPE=4441524b2045434e454c4953">
+                      <form method="post" action="http://192.168.1.72/ProjetPPE/model/controllers/adminRequete.php?OperaPPE=4441524b2045434e454c4953">
                         <h1>Modification de la classe</h1>
 
                         <div class="content">
@@ -142,7 +142,7 @@ $reponse = $base_donnees->getAllUsers();
                         </div>
                         
                         <div class="button">
-                          <a href="http://localhost/ProjetPPE/view/admin/classes"><input type="button" name="time" value='Annulé'></a>
+                          <a href="http://192.168.1.72/ProjetPPE/view/admin/classes.php"><input type="button" name="time" value='Annulé'></a>
                           <input type="submit" value="Valider">
                         </div>
   

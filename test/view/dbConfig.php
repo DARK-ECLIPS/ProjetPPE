@@ -1,6 +1,6 @@
 <?php  
 // Database configuration  
-$dbHost     = "localhost";  
+$dbHost     = "192.168.1.72";  
 $dbUsername = "root";  
 $dbPassword = "";  
 $dbName     = "projetppe";  

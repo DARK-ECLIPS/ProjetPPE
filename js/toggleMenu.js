@@ -13,12 +13,12 @@ function toggleMenu() {
 // Verifie si l'utilisateur est une administrateur
 function adminMenu() {
   // Récupère au lien suivant les data de session de l'utilisateur
-  fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/userInfo.php').then(res => {
+  fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/userInfo.php').then(res => {
     res.json().then(data => {
       // Vérifie les data reçus n'est pas un Professeur ou Receptioniste
       if (data.matter != 'Professeur' && data.matter != 'Receptionniste') {
         document.querySelector('.creneau').innerHTML += `
-          <a href="http://localhost/ProjetPPE/view/admin/adminMenu">
+          <a href="http://192.168.1.72/ProjetPPE/view/admin/adminMenu">
             <span class="icon"><i class="fas fa-user-lock"></i></span>
             <span class="title">Espace Admin</span>
           </a>`;
@@ -32,7 +32,7 @@ function adminMenu() {
 // Complete le formulaire de creneau (<option>, [param])
 function creanauMenu(option, param) {
   if (option == "prof") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/creneau/prof.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/creneau/prof.php').then(res => {
       res.json().then(data => {
         for (i = 0; i < data.response.length; i++) {
           // On ajoute pour chaque objet de data à la class <select>, où l'id de la balise select est egale à prof
@@ -41,7 +41,7 @@ function creanauMenu(option, param) {
       })
     })
   } else if (option == "checkbox") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
       res.json().then(data => {
         const classOption = document.querySelector('.select select[id=classe] option');
         const classSelect = document.querySelector('.select select[id=classe]');
@@ -68,7 +68,7 @@ function creanauMenu(option, param) {
       })
     })
   } else if (option == "matiere") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/creneau/matiere.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/creneau/matiere.php').then(res => {
       res.json().then(data => {
 
         const selector = document.querySelector('.select select[id=classe] option[id=COLLEGE]') || document.querySelector('.select select[id=classe] option[id=LYCEE]') || document.querySelector('.select select[id=classe] option[id=BTS]')
@@ -106,7 +106,7 @@ function creanauMenu(option, param) {
 // Complete le formulaire de matiere (<option>, [param])
 function matiereMenu(option, param) {
   if (option == "checkbox") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
       res.json().then(data => {
         const classOption = document.querySelector('.select select[id=classe] option');
         const classSelect = document.querySelector('.select select[id=classe]');
@@ -133,7 +133,7 @@ function matiereMenu(option, param) {
 
 function reservationMenu(option, param) {
   if (option == "cours") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/reservation/cours.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/reservation/cours.php').then(res => {
       res.json().then(data => {
         for (i = 0; i < data.response.length; i++) {
           // On ajoute pour chaque objet de data à la class <select>, où l'id de la balise select est egale à prof
@@ -142,7 +142,7 @@ function reservationMenu(option, param) {
       })
     })
   } else if (option == "checkbox") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/classe.php').then(res => {
       res.json().then(data => {
         const classOption = document.querySelector('.select select[id=classe] option');
         const classSelect = document.querySelector('.select select[id=classe]');
@@ -169,7 +169,7 @@ function reservationMenu(option, param) {
       })
     })
   } else if (option == "matiere") {
-    fetch('http://localhost/ProjetPPE/model/controllers/jsonRequest/matiere.php').then(res => {
+    fetch('http://192.168.1.72/ProjetPPE/model/controllers/jsonRequest/matiere.php').then(res => {
       res.json().then(data => {
 
         const selector = document.querySelector('.select select[id=classe] option[id=COLLEGE]') || document.querySelector('.select select[id=classe] option[id=LYCEE]') || document.querySelector('.select select[id=classe] option[id=BTS]')

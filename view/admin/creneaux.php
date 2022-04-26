@@ -60,7 +60,7 @@ $reponse = $base_donnees->getAllCreneaux();
 												<td><?php echo "$donnees[edt_heure_deb] - $donnees[edt_heure_fin]" ?></td>
 												<td><?php echo "$donnees[salle_de_classe]" ?></td>
 												<td align="center">
-													<!-- <a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&userID=<?php echo $donnees["id_utilisateur"] ?>"> -->
+													<!-- <a href="http://192.168.1.72/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteUser&userID=<?php echo $donnees["id_utilisateur"] ?>"> -->
 														<i class="fas fa-trash-alt"></i>
 													<!-- </a> -->
 												</td>
@@ -86,8 +86,8 @@ $reponse = $base_donnees->getAllCreneaux();
 					
 					
 					<div class="button">
-						<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
-						<a href="http://localhost/ProjetPPE/view/admin/ajoutBD/creneau"><input type="submit" value="Ajouter"></a>
+						<a href="http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php"><input type="button" value='Retour'></a>
+						<a href="http://192.168.1.72/ProjetPPE/view/admin/ajoutBD/creneau.php"><input type="submit" value="Ajouter"></a>
 					</div>
 
 					</div>

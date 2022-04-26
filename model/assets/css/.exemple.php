@@ -64,8 +64,8 @@
 
 					
 						<div class="button">
-							<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
-							<a href="http://localhost/ProjetPPE/view/admin/matiereAdd"><input type="submit" value="Ajouter"></a>
+							<a href="http://192.168.1.72/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
+							<a href="http://192.168.1.72/ProjetPPE/view/admin/matiereAdd"><input type="submit" value="Ajouter"></a>
 						</div>
 
 					</div>

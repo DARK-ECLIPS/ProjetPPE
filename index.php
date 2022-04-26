@@ -13,14 +13,14 @@
   
 	<?php
 			} elseif ($_GET['OperaPPE'] == "menu") {
-				echo '<meta http-equiv="refresh" content="0;URL=view/menu">';
+				echo '<meta http-equiv="refresh" content="0;URL=view/menu.php">';
 	?>
   
 	<?php
 			}
 		}
 		else {
-			echo '<meta http-equiv="refresh" content="0;URL=view/login">';
+			echo '<meta http-equiv="refresh" content="0;URL=view/login.php">';
 		}
 	?>
 </body>

@@ -54,7 +54,7 @@ $reponse = $base_donnees->getAllClasses();
 												<td><?php echo $donnees["libelle_classe"] ?></td>
 												<td><?php echo "$donnees[nbr_eleve] Éleves" ?></td>
 												<td align="center">
-												<a href="http://localhost/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteTab&tabID=<?php echo $donnees["id_enseignement"] ?>&more=<?php echo $donnees["nbr_eleve"] ?>&tab=3">
+												<a href="http://192.168.1.72/ProjetPPE/model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953&operation=deleteTab&tabID=<?php echo $donnees["id_enseignement"] ?>&more=<?php echo $donnees["nbr_eleve"] ?>&tab=3">
 														<i class="fas fa-trash-alt"></i>
 													</a>
 												</td>
@@ -76,8 +76,8 @@ $reponse = $base_donnees->getAllClasses();
 					
 					
 					<div class="button">
-						<a href="http://localhost/ProjetPPE/view/admin/adminMenu"><input type="button" value='Retour'></a>
-						<a href="http://localhost/ProjetPPE/view/admin/ajoutBD/classe"><input type="submit" value="Ajouter"></a>
+						<a href="http://192.168.1.72/ProjetPPE/view/admin/adminMenu.php"><input type="button" value='Retour'></a>
+						<a href="http://192.168.1.72/ProjetPPE/view/admin/ajoutBD/classe.php"><input type="submit" value="Ajouter"></a>
 					</div>
 
 					</div>

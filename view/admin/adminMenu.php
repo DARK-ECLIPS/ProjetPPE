@@ -22,7 +22,7 @@ include_once('../../model/controllers/CheckUp.php');
       <div class="cardBox">
 
         <span class="status add">
-          <a href="./utilisateurs">
+          <a href="./utilisateurs.php">
             <div class="card">
               <div>
                 <div class="name">Utilisateurs</div>
@@ -34,7 +34,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./creneaux">
+          <a href="./creneaux.php">
             <div class="card">
               <div>
                 <div class="name">Créneaux</div>
@@ -46,7 +46,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./matieres">
+          <a href="./matieres.php">
             <div class="card">
               <div>
                 <div class="name">Matières</div>
@@ -58,7 +58,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./classes">
+          <a href="./classes.php">
             <div class="card">
               <div>
                 <div class="name">Classes</div>
@@ -72,7 +72,7 @@ include_once('../../model/controllers/CheckUp.php');
         </span>
 
         <span class="status edit">
-          <a href="./ajoutBD/utilisateur">
+          <a href="./ajoutBD/utilisateur.php">
             <div class="card">
               <div>
                 <div class="name">Ajout Utilisateur</div>
@@ -84,7 +84,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./ajoutBD/creneau">
+          <a href="./ajoutBD/creneau.php">
             <div class="card">
               <div>
                 <div class="name">Ajout Créneau</div>
@@ -96,7 +96,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./ajoutBD/matiere">
+          <a href="./ajoutBD/matiere.php">
             <div class="card">
               <div>
                 <div class="name">Ajout Matière</div>
@@ -108,7 +108,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./ajoutBD/classe">
+          <a href="./ajoutBD/classe.php">
             <div class="card">
               <div>
                 <div class="name">Ajout Classe</div>
@@ -122,7 +122,7 @@ include_once('../../model/controllers/CheckUp.php');
         </span>
 
         <span class="status delete">
-          <a href="./creneau">
+          <a href="./creneau.php">
             <div class="card">
               <div>
                 <div class="name">???????????</div>
@@ -134,7 +134,7 @@ include_once('../../model/controllers/CheckUp.php');
             </div>
           </a>
 
-          <a href="./matiere">
+          <a href="./matiere.php">
             <div class="card">
               <div>
                 <div class="name">???????????</div>

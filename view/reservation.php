@@ -80,7 +80,7 @@ session_start();
             </div>
               
             <div class="button">
-              <a href="http://localhost/ProjetPPE/view/menu"><input type="button" value='Annulé'></a>
+              <a href="http://192.168.1.72/ProjetPPE/view/menu.php"><input type="button" value='Annulé'></a>
               <input type="submit" value="Valider">
             </div>
             
@@ -89,7 +89,7 @@ session_start();
       </div>
     </div>
     
-    <script src="http://localhost/ProjetPPE/js/toggleMenu.js"></script>
+    <script src="http://192.168.1.72/ProjetPPE/js/toggleMenu.js"></script>
   
   </body>
 </html>
