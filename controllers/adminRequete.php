@@ -2,9 +2,9 @@
 
 	// "Importer" les classes utilisées
 
-  include '../classes/Users.php';
-  require '../classes/ConnexionDB.php';
-  require '../classes/ActionsDB.php';
+  include 'classes/Users.php';
+  require 'classes/ConnexionDB.php';
+  require 'classes/ActionsDB.php';
 
 	$conn_db = new ConnexionDB();
 
@@ -28,7 +28,7 @@
         ?>
         <script>
           alert("Utilisateur mis à jour avec succès");
-          window.location = "http://192.168.1.72/ProjetPPE/view/admin/utilisateurs.php";
+          window.location = "../index.php?OperaPPE=admin&Action=utilisateurs";
         </script>
       <?php
       } else if ($_POST['OperaPPE'] == 'classe') {
@@ -47,7 +47,7 @@
         ?>
         <script>
           alert("Classe mis à jour avec succès");
-          window.location = "http://192.168.1.72/ProjetPPE/view/admin/classes.php";
+          window.location = "../index.php?OperaPPE=admin&Action=classes";
         </script>
       <?php
       }

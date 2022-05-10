@@ -9,7 +9,7 @@
     </label>
   </div>
   <div class="user">
-    <a href="http://192.168.1.72/ProjetPPE/view/userProfile/profile.php">
+    <a href="index.php?OperaPPE=profile">
       <img src="<?php echo $_SESSION['userInfo']['avatar']; ?>" />
     </a>
   </div>

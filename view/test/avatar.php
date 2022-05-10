@@ -3,7 +3,7 @@
 session_start();
 // Include form submission script
 include_once '../classes/upload.php';
-include_once('../../model/controllers/CheckUp.php');
+include_once('../../controllers/CheckUp.php');
 ?>
 <!-- echo ($_SESSION['userInfo']['nom']) -->
 <html>

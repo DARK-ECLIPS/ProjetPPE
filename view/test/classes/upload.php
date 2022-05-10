@@ -1,8 +1,8 @@
 <?php
 // Include the database configuration file
 
-require '../../model/classes/ConnexionDB.php';
-require '../../model/classes/ActionsDB.php';
+require '../../controllers/classes/ConnexionDB.php';
+require '../../controllers/classes/ActionsDB.php';
 
 $conn_db = new ConnexionDB();
 

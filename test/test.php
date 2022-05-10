@@ -9,9 +9,9 @@
 <body>
 	<?php
 		// "Importer" les classes utilisées
-		include "../model/classes/Users.php";
-		require '../model/classes/ConnexionDB.php';
-		require '../model/classes/ActionsDB.php';
+		include "../controllers/classes/Users.php";
+		require '../controllers/classes/ConnexionDB.php';
+		require '../controllers/classes/ActionsDB.php';
 
 		$conn_db = new ConnexionDB();
 

@@ -4,7 +4,7 @@ function login() {
   // On se connecte à MySQL
   //// Souvent on identifie cet objet par la variable $conn ou $db
 
-  $servername = "192.168.1.72";
+  $servername = "localhost";
   $username = "root";
   $password = "";
   $dbname = "projetppe";

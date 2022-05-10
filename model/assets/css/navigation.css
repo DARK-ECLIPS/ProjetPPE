@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@font-face {
+  font-family: "Poppins";
+  src: url(../../../font/Poppins-Regular.ttf) format("truetype");
+}
+@import 'topbar.css';
+
 *
 {
   margin:0;

@@ -70,9 +70,9 @@
 
 		public function getAvatar($sexe)
 		{
-			if ($sexe == 'FEMME') return 'http://192.168.1.72/ProjetPPE/model/assets/images/women.png';
-			else if ($sexe == 'HOMME') return 'http://192.168.1.72/ProjetPPE/model/assets/images/men.png';
-			else return 'http://192.168.1.72/ProjetPPE/model/assets/images/manwo.png';
+			if ($sexe == 'FEMME') return 'http://localhost/ProjetPPE/model/assets/images/women.png';
+			else if ($sexe == 'HOMME') return 'http://localhost/ProjetPPE/model/assets/images/men.png';
+			else return 'http://localhost/ProjetPPE/model/assets/images/manwo.png';
 		}
 
 		// // // // // // // // // // // // // // // // GET FUNCTION // // // // // // // // // // // // // // // // 
@@ -134,7 +134,7 @@
 			switch ($table) {
 				case "utilisateur":
 					$column = "id_utilisateur";
-					$auth = user;
+					$auth = "user";
 					break;
 					case "creneau":
 						$column = "id_utilisateur";
@@ -147,7 +147,7 @@
 					break;
 				case "matiere":
 					$column = "id_matiere";
-					$auth = matiere;
+					$auth = "matiere";
 					break;
 			};
 

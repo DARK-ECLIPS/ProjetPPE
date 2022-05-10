@@ -14,16 +14,19 @@
 
     public function __construct()
     {
-      // $this->sgdbr = 'pgsql';
-			// $this->host = '172.16.130.27';
-			// $this->dbname = 'ppe';
-			// $this->utilisateur = 'wilfrid';
-			// $this->password = 'training';
-			$this->sgdbr = 'mysql';
+      $this->sgdbr = 'pgsql';
+			// $this->host = '192.168.175.96';
+			// $this->host = '172.16.130.39';
 			$this->host = '192.168.1.72';
-			$this->dbname = 'projetppe';
-			$this->utilisateur = 'root';
-			$this->password = '';
+			$this->dbname = 'test_perseverants';
+			// $this->utilisateur = 'training';
+			$this->utilisateur = 'francis';
+			$this->password = 'training';
+			// $this->sgdbr = 'mysql';
+			// $this->host = 'localhost';
+			// $this->dbname = 'projetppe';
+			// $this->utilisateur = 'root';
+			// $this->password = '';
 			try
 			{
 				$this->db = new PDO("{$this->getSGDBR()}:host={$this->getHost()};

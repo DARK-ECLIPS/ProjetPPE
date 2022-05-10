@@ -53,7 +53,7 @@
                 <!-- zone de connexion -->
                 <div class="form">
                     <h1>Connexion</h1>
-                    <form method="post" action="../model/controllers/requetes.php?OperaPPE=4441524b2045434e454c4953">
+                    <form method="post" action="../controllers/requetes.php?OperaPPE=4441524b2045434e454c4953">
                         <input type="hidden" name="OperaPPE" value="login">
                         <div class="inputBox">
                             <input type="text" placeholder="Identifiant" name="pseudo" required>
